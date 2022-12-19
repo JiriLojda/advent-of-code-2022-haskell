@@ -1,0 +1,88 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.35.0.
+--
+-- see: https://github.com/sol/hpack
+
+name:           adventOfCode
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/githubuser/adventOfCode#readme>
+homepage:       https://github.com/githubuser/adventOfCode#readme
+bug-reports:    https://github.com/githubuser/adventOfCode/issues
+author:         Author name here
+maintainer:     example@example.com
+copyright:      2022 Author name here
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    CHANGELOG.md
+
+source-repository head
+  type: git
+  location: https://github.com/githubuser/adventOfCode
+
+library
+  exposed-modules:
+      Day1
+      Day10.Solution
+      Day11.Solution
+      Day12.Grid
+      Day12.Solution
+      Day13.Solution
+      Day2.Day2
+      Day3.Solution
+      Day4.Solution
+      Day5.Solution
+      Day6.Solution
+      Day7.Solution
+      Day8.Grid
+      Day8.Solution
+      Day9.Solution
+      Utils
+  other-modules:
+      Paths_adventOfCode
+  hs-source-dirs:
+      src
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints
+  build-depends:
+      base >=4.7 && <5
+    , containers
+    , megaparsec
+    , split
+    , vector
+  default-language: Haskell2010
+
+executable adventOfCode-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_adventOfCode
+  hs-source-dirs:
+      app
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      adventOfCode
+    , base >=4.7 && <5
+    , containers
+    , megaparsec
+    , split
+    , vector
+  default-language: Haskell2010
+
+test-suite adventOfCode-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_adventOfCode
+  hs-source-dirs:
+      test
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      adventOfCode
+    , base >=4.7 && <5
+    , containers
+    , megaparsec
+    , split
+    , vector
+  default-language: Haskell2010
