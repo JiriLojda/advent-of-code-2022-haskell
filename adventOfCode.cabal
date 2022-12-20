@@ -31,6 +31,11 @@ library
       Day12.Grid
       Day12.Solution
       Day13.Solution
+      Day14.CommonTypes
+      Day14.LimitedRocksMap
+      Day14.RocksMap
+      Day14.SimpleRocksMap
+      Day14.Solution
       Day2.Day2
       Day3.Solution
       Day4.Solution
@@ -45,6 +50,9 @@ library
       Paths_adventOfCode
   hs-source-dirs:
       src
+  default-extensions:
+      TupleSections
+      BangPatterns
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints
   build-depends:
       base >=4.7 && <5
@@ -60,6 +68,9 @@ executable adventOfCode-exe
       Paths_adventOfCode
   hs-source-dirs:
       app
+  default-extensions:
+      TupleSections
+      BangPatterns
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       adventOfCode
@@ -77,6 +88,9 @@ test-suite adventOfCode-test
       Paths_adventOfCode
   hs-source-dirs:
       test
+  default-extensions:
+      TupleSections
+      BangPatterns
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       adventOfCode

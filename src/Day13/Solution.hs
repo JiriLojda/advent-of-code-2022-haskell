@@ -1,6 +1,5 @@
 module Day13.Solution (task1, task2) where
 
-import Debug.Trace
 import qualified Text.Megaparsec as MP
 import qualified Text.Megaparsec.Char as MP.Char
 import qualified Text.Megaparsec.Char.Lexer as MP.Char.L
@@ -53,7 +52,6 @@ task1 = do
     & zip [1..]
     & filter ((== Valid) . (uncurry areListsCorrect) . snd)
     & map fst
-    & traceShowId
     & sum
     & pure
 

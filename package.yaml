@@ -37,6 +37,10 @@ ghc-options:
 - -Wpartial-fields
 - -Wredundant-constraints
 
+default-extensions:
+- TupleSections
+- BangPatterns
+
 library:
   source-dirs: src
 

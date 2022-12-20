@@ -14,6 +14,8 @@ import qualified Day9.Solution as Day9
 import qualified Day10.Solution as Day10
 import qualified Day11.Solution as Day11
 import qualified Day12.Solution as Day12
+import qualified Day13.Solution as Day13
+import qualified Day14.Solution as Day14
 
 main :: IO ()
 main = do
@@ -37,6 +39,8 @@ callDay str = case str of
   "10" -> printDay (fmap show Day10.task1) (fmap show Day10.task2)
   "11" -> printDay (fmap show Day11.task1) (fmap show Day11.task2)
   "12" -> printDay (fmap show Day12.task1) (fmap show Day12.task2)
+  "13" -> printDay (fmap show Day13.task1) (fmap show Day13.task2)
+  "14" -> printDay (fmap show Day14.task1) (fmap show Day14.task2)
   _ -> pure "Not a valid day"
 
 printDay :: IO String -> IO String -> IO String
