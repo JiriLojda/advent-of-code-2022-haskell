@@ -36,6 +36,7 @@ library
       Day14.RocksMap
       Day14.SimpleRocksMap
       Day14.Solution
+      Day15.Solution
       Day2.Day2
       Day3.Solution
       Day4.Solution
@@ -53,6 +54,9 @@ library
   default-extensions:
       TupleSections
       BangPatterns
+      DuplicateRecordFields
+      OverloadedRecordDot
+      NamedFieldPuns
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints
   build-depends:
       base >=4.7 && <5
@@ -71,6 +75,9 @@ executable adventOfCode-exe
   default-extensions:
       TupleSections
       BangPatterns
+      DuplicateRecordFields
+      OverloadedRecordDot
+      NamedFieldPuns
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       adventOfCode
@@ -91,6 +98,9 @@ test-suite adventOfCode-test
   default-extensions:
       TupleSections
       BangPatterns
+      DuplicateRecordFields
+      OverloadedRecordDot
+      NamedFieldPuns
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       adventOfCode

@@ -40,6 +40,9 @@ ghc-options:
 default-extensions:
 - TupleSections
 - BangPatterns
+- DuplicateRecordFields
+- OverloadedRecordDot
+- NamedFieldPuns
 
 library:
   source-dirs: src
