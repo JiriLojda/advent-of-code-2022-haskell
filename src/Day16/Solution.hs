@@ -28,17 +28,25 @@ data Action
   | Open ValveName
   deriving Show
 
-task2 :: IO String
-task2 = pure "Not implemented yet"
+task2 :: IO Int
+task2 = do
+  valvesList <- Utils.loadAndParseFile "src/Day16/data.txt" valvesParser
+  let valveEntries = map (\v -> (v.name, v)) valvesList
+      valves = Map.fromList valveEntries
+      maxMinutes = 26
+      bestActions = findBestActionsInMinutes maxMinutes ["AA", "AA"] valves
+      releasedSum = map (actionsValue valves maxMinutes) bestActions
+  pure (sum releasedSum)
 
 task1 :: IO Int
 task1 = do
   valvesList <- Utils.loadAndParseFile "src/Day16/data.txt" valvesParser
   let valveEntries = map (\v -> (v.name, v)) valvesList
       valves = Map.fromList valveEntries
-      bestActions = findBestActionsInMinutes 30 "AA" valves
-      releasedSum = actionsValue valves 30 bestActions
-  pure releasedSum
+      maxMinutes = 30
+      bestActions = findBestActionsInMinutes maxMinutes ["AA"] valves
+      releasedSum = map (actionsValue valves maxMinutes) bestActions
+  pure (sum releasedSum)
 
 minutesForTransition :: Int
 minutesForTransition = 1
@@ -46,8 +54,18 @@ minutesForTransition = 1
 minutesToOpen :: Int
 minutesToOpen = 1
 
-findBestActionsInMinutes :: Int -> ValveName -> Valves -> [Action]
-findBestActionsInMinutes maxMinutes valveName valves = go [(valveName, [], maxMinutes, 0, mempty)] ([], 0)
+-- type Frame = (ValveName, [Action], Int, Int, Set.Set ValveName)
+data Frame = MkFrame
+  { valve :: ValveName
+  , actions :: [Action]
+  , minutesLeft :: Int
+  , pressure :: Int
+  , isFinished :: Bool
+  }
+
+findBestActionsInMinutes :: Int -> [ValveName] -> Valves -> [[Action]]
+findBestActionsInMinutes maxMinutes valveNames valves =
+  go [(map (\vName -> MkFrame { valve = vName, actions = [], minutesLeft = maxMinutes, pressure = 0, isFinished = False }) valveNames, mempty)] ([], 0)
   where
     valveFromName :: ValveName -> Valve
     valveFromName vName = Maybe.fromMaybe (error ("Cannot find actions for non-existent valve. Valve name: " ++ vName)) (Map.lookup vName valves)
@@ -58,34 +76,50 @@ findBestActionsInMinutes maxMinutes valveName valves = go [(valveName, [], maxMi
     !pathsBetweenValves =
       valves
         & Map.keys
-        & filter (\v -> isNonEmptyValve v || v == valveName)
+        & filter (\v -> isNonEmptyValve v || (v `elem` valveNames))
         & map (\v -> (v, findPathsFromValve v valves))
         & map (BiF.second (Map.filterWithKey $ \k _ -> isNonEmptyValve k))
         & Map.fromList
     
-    maxVisited =
-      valves
-        & Map.keys
-        & filter isNonEmptyValve
-        & length
-
-    go :: [(ValveName, [Action], Int, Int, Set.Set ValveName)] -> ([Action], Int) -> [Action]
-    go [] (best, _) = reverse best
-    go ((vName, actions, !minutesLeft, !pressureSoFar, !visited) : restFrames) currentBest@(_, currentBestPressure) =
-      if minutesLeft <= 1 || Set.size visited == maxVisited || null (createNextFrames currentValve)
-        then go restFrames (if pressureSoFar > currentBestPressure then (actions, pressureSoFar) else currentBest)
-        else go (createNextFrames currentValve ++ restFrames) currentBest
+    createNextFrames :: Set.Set ValveName -> Frame -> [(Set.Set ValveName, Frame)]
+    createNextFrames visited frame = do
+      let valve = valveFromName frame.valve
+      (neighbour, (dist, path)) <- maybe [] (map (BiF.first valveFromName) . Map.toList) (Map.lookup valve.name pathsBetweenValves)
+      let newMinutesLeft = frame.minutesLeft - (dist * minutesForTransition) - minutesToOpen
+          newPressure = frame.pressure + (newMinutesLeft * neighbour.flowRate)
+          newActions = Open neighbour.name : map MoveTo path ++ frame.actions
+      Monad.guard (newMinutesLeft >= 0 && Set.notMember neighbour.name visited)
+      pure (Set.insert neighbour.name visited, MkFrame
+        { valve = neighbour.name
+        , actions = newActions
+        , minutesLeft = newMinutesLeft
+        , pressure = newPressure
+        , isFinished = False
+        })
+    
+    createNextFrameLists :: Set.Set ValveName -> [Frame] -> [([Frame], Set.Set ValveName)]
+    createNextFrameLists _ [] = []
+    createNextFrameLists visited (frame : restFrames) =
+      if frame.isFinished || null nextFrames
+        then map (BiF.first (frame { isFinished = True } :)) (fallbackedNextRestFrames visited)
+        else do
+          (nextVisited, nextFrame) <- nextFrames
+          (nextRestFrames, finalVisited) <- fallbackedNextRestFrames nextVisited
+          pure (nextFrame : nextRestFrames, finalVisited)
       where
-        currentValve = valveFromName vName
+        nextFrames = createNextFrames visited frame
+        allNextRestFrames v = createNextFrameLists v restFrames
+        fallbackedNextRestFrames v = if null (allNextRestFrames v) then [([], v)] else allNextRestFrames v
 
-        createNextFrames :: Valve -> [(ValveName, [Action], Int, Int, Set.Set ValveName)]
-        createNextFrames v = do
-          (neighbour, (dist, path)) <- maybe [] (map (BiF.first valveFromName) . Map.toList) (Map.lookup v.name pathsBetweenValves)
-          let newMinutesLeft = minutesLeft - (dist * minutesForTransition) - minutesToOpen
-              newPressure = pressureSoFar + (newMinutesLeft * neighbour.flowRate)
-              newActions = Open neighbour.name : map MoveTo path ++ actions
-          Monad.guard (newMinutesLeft >= 0 && Set.notMember neighbour.name visited)
-          pure (neighbour.name, newActions, newMinutesLeft, newPressure, Set.insert v.name visited)
+    go :: [([Frame], Set.Set ValveName)] -> ([[Action]], Int) -> [[Action]]
+    go [] (best, _) = map reverse best
+    go ((frames, visited) : restFrames) currentBest@(_, currentBestPressure) =
+      if all (.isFinished) frames
+        then go restFrames (if framesPressure > currentBestPressure then (framesActions, framesPressure) else currentBest)
+        else go (createNextFrameLists visited frames ++ restFrames) currentBest
+      where
+        framesPressure = sum . map (.pressure) $ frames
+        framesActions = map (.actions) frames
         
 type ValvePaths = Map.Map ValveName (Int, [ValveName])
 
