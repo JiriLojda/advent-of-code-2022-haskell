@@ -23,8 +23,10 @@ dependencies:
 - base >= 4.7 && < 5
 - split
 - containers
+- unordered-containers
 - megaparsec
 - vector
+- text
 
 ghc-options:
 - -Wall
@@ -36,6 +38,7 @@ ghc-options:
 - -Wmissing-home-modules
 - -Wpartial-fields
 - -Wredundant-constraints
+- -O2
 
 default-extensions:
 - TupleSections

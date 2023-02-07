@@ -1,0 +1,836 @@
+	Tue Feb  7 20:13 2023 Time and Allocation Profiling Report  (Final)
+
+	   adventOfCode-exe +RTS -N -hd -p -sstderr -RTS
+
+	total time  =       90.51 secs   (127618 ticks @ 1000 us, 10 processors)
+	total alloc = 194,602,952,992 bytes  (excludes profiling overheads)
+
+COST CENTRE                          MODULE                 SRC                                          %time %alloc
+
+addPos                               Day17.Solution         src/Day17/Solution.hs:(243,1)-(246,16)        12.7   18.1
+isValidPosition.valid                Day17.Solution         src/Day17/Solution.hs:(206,5)-(208,45)        12.6    0.0
+hash                                 Data.Hashable.Class    src/Data/Hashable/Class.hs:596:5-45            9.1    6.8
+lookup#                              Data.HashMap.Internal  Data/HashMap/Internal.hs:609:1-82              8.6    5.6
+isValidPosition                      Day17.Solution         src/Day17/Solution.hs:(200,1)-(228,36)         8.3    3.7
+hash                                 Data.HashMap.Internal  Data/HashMap/Internal.hs:180:1-28              4.7    5.7
+delete'.go                           Data.HashMap.Internal  Data/HashMap/Internal.hs:(1079,5)-(1125,23)    4.6    6.9
+isValidPosition.doesntBreakRightWall Day17.Solution         src/Day17/Solution.hs:222:5-55                 3.5    2.3
+insert'.go                           Data.HashMap.Internal  Data/HashMap/Internal.hs:(774,5)-(803,76)      3.5    3.9
+makeRockFallUntilRest.go             Day17.Solution         src/Day17/Solution.hs:(139,5)-(144,54)         2.9    5.2
+hashInt                              Data.Hashable.LowLevel src/Data/Hashable/LowLevel.hs:65:1-41          2.7    4.5
+member                               Data.HashSet.Internal  Data/HashSet/Internal.hs:(348,1)-(350,30)      1.7    0.0
+pushWithStream                       Day17.Solution         src/Day17/Solution.hs:(188,1)-(197,67)         1.5    3.3
+restRock.removeLast                  Day17.Solution         src/Day17/Solution.hs:(176,5)-(177,67)         1.4    5.1
+makeRockFall                         Day17.Solution         src/Day17/Solution.hs:(180,1)-(185,64)         1.3    2.8
+hashWithSalt                         Data.Hashable.Class    src/Data/Hashable/Class.hs:384:5-26            1.2    0.0
+insert'.go.ary'                      Data.HashMap.Internal  Data/HashMap/Internal.hs:784:17-56             1.2    2.0
+restRock.addBlocked                  Day17.Solution         src/Day17/Solution.hs:(169,5)-(173,21)         1.1    3.5
+$sel:roomWidth:MkEnvProps            Day17.Solution         src/Day17/Solution.hs:122:5-13                 1.0    0.9
+restRock.newBlocked                  Day17.Solution         src/Day17/Solution.hs:166:5-79                 0.9    2.2
+makeRockFallUntilRest.go.(...)       Day17.Solution         src/Day17/Solution.hs:143:9-59                 0.8    2.1
+restRock.(...)                       Day17.Solution         src/Day17/Solution.hs:164:5-151                0.5    1.5
+spawnRock                            Day17.Solution         src/Day17/Solution.hs:(127,1)-(133,51)         0.4    1.2
+fallXRocks.fallNextRock              Day17.Solution         src/Day17/Solution.hs:(89,5)-(92,77)           0.4    1.5
+clone                                Data.HashMap.Internal  Data/HashMap/Internal.hs:(2370,1)-(2371,34)    0.3    3.7
+
+
+                                                                                                                                                           individual      inherited
+COST CENTRE                                                MODULE                      SRC                                             no.      entries  %time %alloc   %time %alloc
+
+MAIN                                                       MAIN                        <built-in>                                      2565           0    0.0    0.0   100.0  100.0
+ CAF                                                       GHC.Conc.Signal             <entire-module>                                 4225           0    0.0    0.0     0.0    0.0
+ CAF                                                       GHC.Event.Thread            <entire-module>                                 4223           0    0.0    0.0     0.0    0.0
+ CAF                                                       GHC.IO.Exception            <entire-module>                                 4220           0    0.0    0.0     0.0    0.0
+ CAF                                                       GHC.IO.Handle.FD            <entire-module>                                 4218           0    0.0    0.0     0.0    0.0
+ CAF                                                       GHC.IO.Handle.Internals     <entire-module>                                 4217           0    0.0    0.0     0.0    0.0
+ CAF                                                       GHC.IO.Handle.Text          <entire-module>                                 4216           0    0.0    0.0     0.0    0.0
+ CAF                                                       Debug.Trace                 <entire-module>                                 4150           0    0.0    0.0     0.0    0.0
+ CAF                                                       GHC.Event.Poll              <entire-module>                                 4136           0    0.0    0.0     0.0    0.0
+ CAF                                                       GHC.IO.Encoding             <entire-module>                                 4123           0    0.0    0.0     0.0    0.0
+ CAF                                                       GHC.IO.FD                   <entire-module>                                 4119           0    0.0    0.0     0.0    0.0
+ CAF                                                       GHC.IO.Encoding.Iconv       <entire-module>                                 3652           0    0.0    0.0     0.0    0.0
+ CAF:$fAlternativeParsecT_$cfmap                           Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:159:3-6             3920           0    0.0    0.0     0.0    0.0
+  fmap                                                     Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:159:3-13            5160           1    0.0    0.0     0.0    0.0
+ CAF:$fHashable1Hashed_$chash                              Data.Hashable.Class         src/Data/Hashable/Class.hs:383:5-8              4019           0    0.0    0.0     0.0    0.0
+  hash                                                     Data.Hashable.Class         src/Data/Hashable/Class.hs:383:5-13             5511           1    0.0    0.0     0.0    0.0
+ CAF:$fHashable1IntMap_$chashWithSalt                      Data.Hashable.Class         src/Data/Hashable/Class.hs:384:5-16             4020           0    0.0    0.0     0.0    0.0
+  hashWithSalt                                             Data.Hashable.Class         src/Data/Hashable/Class.hs:384:5-26             5508           1    0.0    0.0     0.0    0.0
+ CAF:$fMonoidHashSet1                                      Data.HashSet.Internal       <no location info>                              3700           0    0.0    0.0     0.0    0.0
+  empty                                                    Data.HashSet.Internal       Data/HashSet/Internal.hs:255:1-23               5439           1    0.0    0.0     0.0    0.0
+ CAF:bitsPerSubkey                                         Data.HashMap.Internal       Data/HashMap/Internal.hs:2383:1-13              3758           0    0.0    0.0     0.0    0.0
+  bitsPerSubkey                                            Data.HashMap.Internal       Data/HashMap/Internal.hs:2383:1-17              5585           1    0.0    0.0     0.0    0.0
+ CAF:doesntBreakBottom_r2s27                               Day17.Solution              src/Day17/Solution.hs:228:5-21                  4557           0    0.0    0.0     0.0    0.0
+  isValidPosition                                          Day17.Solution              src/Day17/Solution.hs:(200,1)-(228,36)          5492           0    0.0    0.0     0.0    0.0
+   isValidPosition.doesntBreakBottom                       Day17.Solution              src/Day17/Solution.hs:228:5-36                  5493           1    0.0    0.0     0.0    0.0
+ CAF:doesntBreakLeftWall_r2s26                             Day17.Solution              src/Day17/Solution.hs:225:5-23                  4556           0    0.0    0.0     0.0    0.0
+  isValidPosition                                          Day17.Solution              src/Day17/Solution.hs:(200,1)-(228,36)          5495           0    0.0    0.0     0.0    0.0
+   isValidPosition.doesntBreakLeftWall                     Day17.Solution              src/Day17/Solution.hs:225:5-38                  5496           1    0.0    0.0     0.0    0.0
+ CAF:empty                                                 Data.HashMap.Internal       Data/HashMap/Internal.hs:565:1-5                3749           0    0.0    0.0     0.0    0.0
+  empty                                                    Data.HashMap.Internal       Data/HashMap/Internal.hs:565:1-13               5440           1    0.0    0.0     0.0    0.0
+ CAF:eta1_r2s37                                            Day17.Solution              <no location info>                              4588           0    0.0    0.0     0.0    0.0
+  >>=                                                      Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:210:3-15            5174           1    0.0    0.0     0.0    0.0
+ CAF:eta_r2s2X                                             Day17.Solution              <no location info>                              4584           0    0.0    0.0     0.0    0.0
+  rockParser                                               Day17.Solution              src/Day17/Solution.hs:(260,1)-(268,7)           5175           0    0.0    0.0     0.0    0.0
+   rockParser.rockCharParser                               Day17.Solution              src/Day17/Solution.hs:(265,5)-(268,7)           5176           1    0.0    0.0     0.0    0.0
+ CAF:k1_r2s3C                                              Day17.Solution              <no location info>                              4602           0    0.0    0.0     0.0    0.0
+  moveParser                                               Day17.Solution              src/Day17/Solution.hs:(288,1)-(291,3)           5281           0    0.0    0.0     0.0    0.0
+   <|>                                                     Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:205:3-15            5282           1    0.0    0.0     0.0    0.0
+    mplus                                                  Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:295:3-15            5283           1    0.0    0.0     0.0    0.0
+ CAF:k_r2s2K                                               Day17.Solution              <no location info>                              4581           0    0.0    0.0     0.0    0.0
+  rockParser                                               Day17.Solution              src/Day17/Solution.hs:(260,1)-(268,7)           5177           0    0.0    0.0     0.0    0.0
+   rockParser.rockCharParser                               Day17.Solution              src/Day17/Solution.hs:(265,5)-(268,7)           5178           0    0.0    0.0     0.0    0.0
+    <|>                                                    Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:205:3-15            5179           1    0.0    0.0     0.0    0.0
+     mplus                                                 Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:295:3-15            5180           1    0.0    0.0     0.0    0.0
+ CAF:lvl13_r4FR                                            Main                        <no location info>                              5122           0    0.0    0.0     0.0    0.0
+  main                                                     Main                        app/Main.hs:(24,1)-(29,14)                      5132           0    0.0    0.0     0.0    0.0
+ CAF:lvl1_r2s1T                                            Day17.Solution              <no location info>                              4548           0    0.0    0.0     0.0    0.0
+  moveParser                                               Day17.Solution              src/Day17/Solution.hs:(288,1)-(291,3)           5317           0    0.0    0.0     0.0    0.0
+   empty                                                   Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:204:3-15            5318           1    0.0    0.0     0.0    0.0
+    mzero                                                  Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:294:3-15            5319           1    0.0    0.0     0.0    0.0
+ CAF:lvl25_r2s2R                                           Day17.Solution              <no location info>                              4582           0    0.0    0.0     0.0    0.0
+  rockParser                                               Day17.Solution              src/Day17/Solution.hs:(260,1)-(268,7)           5186           0    0.0    0.0     0.0    0.0
+   rockParser.rockCharParser                               Day17.Solution              src/Day17/Solution.hs:(265,5)-(268,7)           5187           0    0.0    0.0     0.0    0.0
+    token                                                  Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:348:3-16            5188           1    0.0    0.0     0.0    0.0
+ CAF:lvl26_r2s2V                                           Day17.Solution              <no location info>                              4583           0    0.0    0.0     0.0    0.0
+  rockParser                                               Day17.Solution              src/Day17/Solution.hs:(260,1)-(268,7)           5191           0    0.0    0.0     0.0    0.0
+   rockParser.rockCharParser                               Day17.Solution              src/Day17/Solution.hs:(265,5)-(268,7)           5192           0    0.0    0.0     0.0    0.0
+    token                                                  Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:348:3-16            5193           1    0.0    0.0     0.0    0.0
+ CAF:lvl28_r2s2Y                                           Day17.Solution              <no location info>                              4585           0    0.0    0.0     0.0    0.0
+  rockParser                                               Day17.Solution              src/Day17/Solution.hs:(260,1)-(268,7)           5202           0    0.0    0.0     0.0    0.0
+ CAF:lvl29_r2s2Z                                           Day17.Solution              <no location info>                              4586           0    0.0    0.0     0.0    0.0
+  rockParser                                               Day17.Solution              src/Day17/Solution.hs:(260,1)-(268,7)           5199           0    0.0    0.0     0.0    0.0
+   <|>                                                     Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:205:3-15            5200           1    0.0    0.0     0.0    0.0
+    mplus                                                  Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:295:3-15            5201           1    0.0    0.0     0.0    0.0
+ CAF:lvl31_r2s38                                           Day17.Solution              <no location info>                              4589           0    0.0    0.0     0.0    0.0
+  rockParser                                               Day17.Solution              src/Day17/Solution.hs:(260,1)-(268,7)           5173           0    0.0    0.0     0.0    0.0
+ CAF:lvl32_r2s39                                           Day17.Solution              <no location info>                              4590           0    0.0    0.0     0.0    0.0
+  rockParser                                               Day17.Solution              src/Day17/Solution.hs:(260,1)-(268,7)           5167           0    0.0    0.0     0.0    0.0
+   <|>                                                     Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:205:3-15            5168           1    0.0    0.0     0.0    0.0
+    mplus                                                  Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:295:3-15            5169           1    0.0    0.0     0.0    0.0
+ CAF:lvl33_r2s3d                                           Day17.Solution              <no location info>                              4592           0    0.0    0.0     0.0    0.0
+  rockParser                                               Day17.Solution              src/Day17/Solution.hs:(260,1)-(268,7)           5225           0    0.0    0.0     0.0    0.0
+ CAF:lvl34_r2s3e                                           Day17.Solution              <no location info>                              4593           0    0.0    0.0     0.0    0.0
+  rockParser                                               Day17.Solution              src/Day17/Solution.hs:(260,1)-(268,7)           5222           0    0.0    0.0     0.0    0.0
+   <|>                                                     Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:205:3-15            5223           1    0.0    0.0     0.0    0.0
+    mplus                                                  Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:295:3-15            5224           1    0.0    0.0     0.0    0.0
+ CAF:lvl35_r2s3q                                           Day17.Solution              <no location info>                              4596           0    0.0    0.0     0.0    0.0
+  rocksParser                                              Day17.Solution              src/Day17/Solution.hs:(250,1)-(254,33)          5159           0    0.0    0.0     0.0    0.0
+ CAF:lvl36_r2s3r                                           Day17.Solution              <no location info>                              4597           0    0.0    0.0     0.0    0.0
+  rocksParser                                              Day17.Solution              src/Day17/Solution.hs:(250,1)-(254,33)          5153           0    0.0    0.0     0.0    0.0
+   <|>                                                     Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:205:3-15            5154           1    0.0    0.0     0.0    0.0
+    mplus                                                  Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:295:3-15            5155           1    0.0    0.0     0.0    0.0
+ CAF:lvl37_r2s3s                                           Day17.Solution              <no location info>                              4598           0    0.0    0.0     0.0    0.0
+  rocksParser                                              Day17.Solution              src/Day17/Solution.hs:(250,1)-(254,33)          5239           0    0.0    0.0     0.0    0.0
+ CAF:lvl38_r2s3t                                           Day17.Solution              <no location info>                              4599           0    0.0    0.0     0.0    0.0
+  rocksParser                                              Day17.Solution              src/Day17/Solution.hs:(250,1)-(254,33)          5236           0    0.0    0.0     0.0    0.0
+   <|>                                                     Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:205:3-15            5237           1    0.0    0.0     0.0    0.0
+    mplus                                                  Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:295:3-15            5238           1    0.0    0.0     0.0    0.0
+ CAF:lvl39_r2s3F                                           Day17.Solution              <no location info>                              4608           0    0.0    0.0     0.0    0.0
+  movesParser                                              Day17.Solution              src/Day17/Solution.hs:(281,1)-(285,33)          5306           0    0.0    0.0     0.0    0.0
+ CAF:lvl40_r2s3G                                           Day17.Solution              <no location info>                              4609           0    0.0    0.0     0.0    0.0
+  movesParser                                              Day17.Solution              src/Day17/Solution.hs:(281,1)-(285,33)          5300           0    0.0    0.0     0.0    0.0
+   <|>                                                     Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:205:3-15            5301           1    0.0    0.0     0.0    0.0
+    mplus                                                  Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:295:3-15            5302           1    0.0    0.0     0.0    0.0
+ CAF:lvl41_r2s3M                                           Day17.Solution              <no location info>                              4613           0    0.0    0.0     0.0    0.0
+  insert'                                                  Data.HashMap.Internal       Data/HashMap/Internal.hs:(772,1)-(803,76)       5621           0    0.0    0.0     0.0    0.0
+   insert'.go                                              Data.HashMap.Internal       Data/HashMap/Internal.hs:(774,5)-(803,76)       5622           0    0.0    0.0     0.0    0.0
+    clone                                                  Data.HashMap.Internal       Data/HashMap/Internal.hs:(2370,1)-(2371,34)     5623           0    0.0    0.0     0.0    0.0
+ CAF:lvl4_r2s1W                                            Day17.Solution              <no location info>                              4550           0    0.0    0.0     0.0    0.0
+  rocksParser                                              Day17.Solution              src/Day17/Solution.hs:(250,1)-(254,33)          5266           0    0.0    0.0     0.0    0.0
+   pure                                                    Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:168:3-14            5267           1    0.0    0.0     0.0    0.0
+ CAF:lvl5_r2s1Z                                            Day17.Solution              <no location info>                              4551           0    0.0    0.0     0.0    0.0
+  rockParser                                               Day17.Solution              src/Day17/Solution.hs:(260,1)-(268,7)           5229           0    0.0    0.0     0.0    0.0
+   pure                                                    Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:168:3-14            5230           1    0.0    0.0     0.0    0.0
+ CAF:lvl7_r2s21                                            Day17.Solution              <no location info>                              4553           0    0.0    0.0     0.0    0.0
+  rockParser                                               Day17.Solution              src/Day17/Solution.hs:(260,1)-(268,7)           5214           0    0.0    0.0     0.0    0.0
+   pure                                                    Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:168:3-14            5215           1    0.0    0.0     0.0    0.0
+ CAF:lvl8_r2s23                                            Day17.Solution              <no location info>                              4554           0    0.0    0.0     0.0    0.0
+  rockParser                                               Day17.Solution              src/Day17/Solution.hs:(260,1)-(268,7)           5205           0    0.0    0.0     0.0    0.0
+   rockParser.rockCharParser                               Day17.Solution              src/Day17/Solution.hs:(265,5)-(268,7)           5206           0    0.0    0.0     0.0    0.0
+    empty                                                  Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:204:3-15            5207           1    0.0    0.0     0.0    0.0
+     mzero                                                 Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:294:3-15            5208           1    0.0    0.0     0.0    0.0
+ CAF:lvl_r2s1S                                             Day17.Solution              <no location info>                              4545           0    0.0    0.0     0.0    0.0
+  movesParser                                              Day17.Solution              src/Day17/Solution.hs:(281,1)-(285,33)          5325           0    0.0    0.0     0.0    0.0
+   pure                                                    Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:168:3-14            5326           1    0.0    0.0     0.0    0.0
+ CAF:m2_r2s35                                              Day17.Solution              <no location info>                              4587           0    0.0    0.0     0.0    0.0
+  rockParser                                               Day17.Solution              src/Day17/Solution.hs:(260,1)-(268,7)           5197           0    0.0    0.0     0.0    0.0
+   >>=                                                     Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:210:3-15            5198           1    0.0    0.0     0.0    0.0
+   return                                                  Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:209:3-15            5259           1    0.0    0.0     0.0    0.0
+    pure                                                   Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:168:3-14            5260           1    0.0    0.0     0.0    0.0
+ CAF:main1                                                 Main                        <no location info>                              5128           0    0.0    0.0     0.0    0.0
+  main                                                     Main                        app/Main.hs:(24,1)-(29,14)                      5130           1    0.0    0.0     0.0    0.0
+ CAF:maxChildren                                           Data.HashMap.Internal       Data/HashMap/Internal.hs:2387:1-11              3759           0    0.0    0.0     0.0    0.0
+  maxChildren                                              Data.HashMap.Internal       Data/HashMap/Internal.hs:2387:1-44              5596           1    0.0    0.0     0.0    0.0
+ CAF:moveBy_r2qcp                                          Day17.Solution              src/Day17/Solution.hs:240:1-6                   4568           0    0.0    0.0     0.0    0.0
+  moveBy                                                   Day17.Solution              src/Day17/Solution.hs:240:1-15                  5475           1    0.0    0.0     0.0    0.0
+ CAF:parse                                                 Text.Megaparsec             Text/Megaparsec.hs:185:1-5                      4013           0    0.0    0.0     0.0    0.0
+  parse                                                    Text.Megaparsec             Text/Megaparsec.hs:185:1-17                     5141           1    0.0    0.0     0.0    0.0
+ CAF:rockParser1_r2s3p                                     Day17.Solution              <no location info>                              4595           0    0.0    0.0     0.0    0.0
+  rockParser                                               Day17.Solution              src/Day17/Solution.hs:(260,1)-(268,7)           5161           1    0.0    0.0     0.0    0.0
+   >>=                                                     Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:210:3-15            5162           1    0.0    0.0     0.0    0.0
+ CAF:rockParser_r2s3o                                      Day17.Solution              <no location info>                              4594           0    0.0    0.0     0.0    0.0
+  rockParser                                               Day17.Solution              src/Day17/Solution.hs:(260,1)-(268,7)           5165           0    0.0    0.0     0.0    0.0
+   >>=                                                     Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:210:3-15            5166           1    0.0    0.0     0.0    0.0
+ CAF:rockSymbol_r2qcs                                      Day17.Solution              src/Day17/Solution.hs:257:1-10                  4567           0    0.0    0.0     0.0    0.0
+  rockSymbol                                               Day17.Solution              src/Day17/Solution.hs:257:1-16                  5194           1    0.0    0.0     0.0    0.0
+ CAF:sep2_r2s3c                                            Day17.Solution              <no location info>                              4591           0    0.0    0.0     0.0    0.0
+  token                                                    Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:348:3-16            5226           1    0.0    0.0     0.0    0.0
+ CAF:spawnRockMargins                                      Day17.Solution              src/Day17/Solution.hs:39:1-16                   4569           0    0.0    0.0     0.0    0.0
+  spawnRockMargins                                         Day17.Solution              src/Day17/Solution.hs:39:1-25                   5431           1    0.0    0.0     0.0    0.0
+ CAF:subkeyMask                                            Data.HashMap.Internal       Data/HashMap/Internal.hs:2391:1-10              3761           0    0.0    0.0     0.0    0.0
+  subkeyMask                                               Data.HashMap.Internal       Data/HashMap/Internal.hs:2391:1-47              5584           1    0.0    0.0     0.0    0.0
+ CAF:task10                                                Day17.Solution              <no location info>                              4558           0    0.0    0.0     0.0    0.0
+  createInitialState                                       Day17.Solution              src/Day17/Solution.hs:(75,1)-(81,3)             5437           0    0.0    0.0     0.0    0.0
+   mempty                                                  Data.HashSet.Internal       Data/HashSet/Internal.hs:209:5-18               5438           1    0.0    0.0     0.0    0.0
+ CAF:task13                                                Day17.Solution              <no location info>                              4618           0    0.0    0.0     0.0    0.0
+  task1                                                    Day17.Solution              src/Day17/Solution.hs:(58,1)-(72,7)             5272           0    0.0    0.0     0.0    0.0
+   loadAndParseFile                                        Utils                       src/Utils.hs:(26,1)-(30,25)                     5273           1    0.0    0.0     0.0    0.0
+ CAF:task14                                                Day17.Solution              <no location info>                              4612           0    0.0    0.0     0.0    0.0
+  movesParser                                              Day17.Solution              src/Day17/Solution.hs:(281,1)-(285,33)          5274           1    0.0    0.0     0.0    0.0
+   >>=                                                     Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:210:3-15            5275           1    0.0    0.0     0.0    0.0
+ CAF:task17                                                Day17.Solution              <no location info>                              4611           0    0.0    0.0     0.0    0.0
+  movesParser                                              Day17.Solution              src/Day17/Solution.hs:(281,1)-(285,33)          5278           0    0.0    0.0     0.0    0.0
+   >>=                                                     Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:210:3-15            5279           1    0.0    0.0     0.0    0.0
+ CAF:task19                                                Day17.Solution              <no location info>                              4610           0    0.0    0.0     0.0    0.0
+  movesParser                                              Day17.Solution              src/Day17/Solution.hs:(281,1)-(285,33)          5298           0    0.0    0.0     0.0    0.0
+   >>=                                                     Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:210:3-15            5299           1    0.0    0.0     0.0    0.0
+ CAF:task1_envProps                                        Day17.Solution              src/Day17/Solution.hs:67:5-12                   4542           0    0.0    0.0     0.0    0.0
+  task1                                                    Day17.Solution              src/Day17/Solution.hs:(58,1)-(72,7)             5479           0    0.0    0.0     0.0    0.0
+   task1.envProps                                          Day17.Solution              src/Day17/Solution.hs:(67,5)-(72,7)             5480           1    0.0    0.0     0.0    0.0
+ CAF:task21                                                Day17.Solution              <no location info>                              4607           0    0.0    0.0     0.0    0.0
+  moveParser                                               Day17.Solution              src/Day17/Solution.hs:(288,1)-(291,3)           5280           1    0.0    0.0     0.0    0.0
+ CAF:task23                                                Day17.Solution              <no location info>                              4606           0    0.0    0.0     0.0    0.0
+  moveParser                                               Day17.Solution              src/Day17/Solution.hs:(288,1)-(291,3)           5311           0    0.0    0.0     0.0    0.0
+   >>=                                                     Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:210:3-15            5312           1    0.0    0.0     0.0    0.0
+ CAF:task25                                                Day17.Solution              <no location info>                              4546           0    0.0    0.0     0.0    0.0
+  moveParser                                               Day17.Solution              src/Day17/Solution.hs:(288,1)-(291,3)           5315           0    0.0    0.0     0.0    0.0
+   pure                                                    Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:168:3-14            5316           1    0.0    0.0     0.0    0.0
+ CAF:task26                                                Day17.Solution              <no location info>                              4605           0    0.0    0.0     0.0    0.0
+  moveParser                                               Day17.Solution              src/Day17/Solution.hs:(288,1)-(291,3)           5313           0    0.0    0.0     0.0    0.0
+   token                                                   Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:348:3-16            5314           1    0.0    0.0     0.0    0.0
+ CAF:task2_envProps                                        Day17.Solution              src/Day17/Solution.hs:50:5-12                   4544           0    0.0    0.0     0.0    0.0
+  task2                                                    Day17.Solution              src/Day17/Solution.hs:(42,1)-(55,7)             5678           0    0.0    0.0     0.0    0.0
+   task2.envProps                                          Day17.Solution              src/Day17/Solution.hs:(50,5)-(55,7)             5679           1    0.0    0.0     0.0    0.0
+ CAF:task31                                                Day17.Solution              <no location info>                              4604           0    0.0    0.0     0.0    0.0
+  moveParser                                               Day17.Solution              src/Day17/Solution.hs:(288,1)-(291,3)           5289           0    0.0    0.0     0.0    0.0
+   >>=                                                     Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:210:3-15            5290           1    0.0    0.0     0.0    0.0
+ CAF:task33                                                Day17.Solution              <no location info>                              4547           0    0.0    0.0     0.0    0.0
+  moveParser                                               Day17.Solution              src/Day17/Solution.hs:(288,1)-(291,3)           5295           0    0.0    0.0     0.0    0.0
+   pure                                                    Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:168:3-14            5296           1    0.0    0.0     0.0    0.0
+ CAF:task34                                                Day17.Solution              <no location info>                              4603           0    0.0    0.0     0.0    0.0
+  moveParser                                               Day17.Solution              src/Day17/Solution.hs:(288,1)-(291,3)           5292           0    0.0    0.0     0.0    0.0
+   token                                                   Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:348:3-16            5293           1    0.0    0.0     0.0    0.0
+ CAF:task39                                                Day17.Solution              <no location info>                              4541           0    0.0    0.0     0.0    0.0
+ CAF:task4                                                 Day17.Solution              <no location info>                              4620           0    0.0    0.0     0.0    0.0
+  task1                                                    Day17.Solution              src/Day17/Solution.hs:(58,1)-(72,7)             5135           1    0.0    0.0     0.0    0.0
+ CAF:task41                                                Day17.Solution              <no location info>                              4619           0    0.0    0.0     0.0    0.0
+  task1                                                    Day17.Solution              src/Day17/Solution.hs:(58,1)-(72,7)             5137           0    0.0    0.0     0.0    0.0
+   loadAndParseFile                                        Utils                       src/Utils.hs:(26,1)-(30,25)                     5138           1    0.0    0.0     0.0    0.0
+ CAF:task42                                                Day17.Solution              <no location info>                              4601           0    0.0    0.0     0.0    0.0
+  rocksParser                                              Day17.Solution              src/Day17/Solution.hs:(250,1)-(254,33)          5147           1    0.0    0.0     0.0    0.0
+   >>=                                                     Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:210:3-15            5148           1    0.0    0.0     0.0    0.0
+ CAF:task43                                                Day17.Solution              <no location info>                              4600           0    0.0    0.0     0.0    0.0
+  rocksParser                                              Day17.Solution              src/Day17/Solution.hs:(250,1)-(254,33)          5151           0    0.0    0.0     0.0    0.0
+   >>=                                                     Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:210:3-15            5152           1    0.0    0.0     0.0    0.0
+ CAF:task45                                                Day17.Solution              <no location info>                              4540           0    0.0    0.0     0.0    0.0
+ CAF:task47                                                Day17.Solution              <no location info>                              4616           0    0.0    0.0     0.0    0.0
+  task2                                                    Day17.Solution              src/Day17/Solution.hs:(42,1)-(55,7)             5335           1    0.0    0.0     0.0    0.0
+ CAF:task48                                                Day17.Solution              <no location info>                              4614           0    0.0    0.0     0.0    0.0
+  task2                                                    Day17.Solution              src/Day17/Solution.hs:(42,1)-(55,7)             5399           0    0.0    0.0     0.0    0.0
+   loadAndParseFile                                        Utils                       src/Utils.hs:(26,1)-(30,25)                     5400           1    0.0    0.0     0.0    0.0
+ CAF:task49                                                Day17.Solution              <no location info>                              4543           0    0.0    0.0     0.0    0.0
+ CAF:task5                                                 Day17.Solution              <no location info>                              4559           0    0.0    0.0     0.0    0.0
+ CAF:task51                                                Day17.Solution              <no location info>                              4615           0    0.0    0.0     0.0    0.0
+  task2                                                    Day17.Solution              src/Day17/Solution.hs:(42,1)-(55,7)             5337           0    0.0    0.0     0.0    0.0
+   loadAndParseFile                                        Utils                       src/Utils.hs:(26,1)-(30,25)                     5338           1    0.0    0.0     0.0    0.0
+ main                                                      Main                        app/Main.hs:(24,1)-(29,14)                      5131           0    0.0    0.0   100.0  100.0
+  callDay                                                  Main                        app/Main.hs:(32,1)-(50,29)                      5133           1    0.0    0.0   100.0  100.0
+   printDay                                                Main                        app/Main.hs:(53,1)-(56,25)                      5134           1    0.0    0.0   100.0  100.0
+    task1                                                  Day17.Solution              src/Day17/Solution.hs:(58,1)-(72,7)             5136           0    0.0    0.0     0.0    0.0
+     $sel:highestPoint:MkState                             Day17.Solution              src/Day17/Solution.hs:108:5-16                  5423           1    0.0    0.0     0.0    0.0
+     task1.(...)                                           Day17.Solution              src/Day17/Solution.hs:62:7-61                   5429           1    0.0    0.0     0.0    0.0
+      createInitialState                                   Day17.Solution              src/Day17/Solution.hs:(75,1)-(81,3)             5430           1    0.0    0.0     0.0    0.0
+       spawnRock                                           Day17.Solution              src/Day17/Solution.hs:(127,1)-(133,51)          5432           1    0.0    0.0     0.0    0.0
+        $sel:highestPoint:MkState                          Day17.Solution              src/Day17/Solution.hs:108:5-16                  5456           1    0.0    0.0     0.0    0.0
+        spawnRock.(...)                                    Day17.Solution              src/Day17/Solution.hs:133:5-51                  5434           1    0.0    0.0     0.0    0.0
+         readItem                                          Day17.CyclicList            src/Day17/CyclicList.hs:(10,1)-(11,35)          5435           1    0.0    0.0     0.0    0.0
+        spawnRock.newRock                                  Day17.Solution              src/Day17/Solution.hs:133:5-51                  5441           1    0.0    0.0     0.0    0.0
+        spawnRock.newRocks                                 Day17.Solution              src/Day17/Solution.hs:133:5-51                  5433           1    0.0    0.0     0.0    0.0
+     task1.finalState                                      Day17.Solution              src/Day17/Solution.hs:63:7-75                   5424           1    0.0    0.0     0.0    0.0
+      fallXRocks                                           Day17.Solution              src/Day17/Solution.hs:(84,1)-(92,77)            5425           1    0.0    0.0     0.0    0.0
+       fallXRocks.(...)                                    Day17.Solution              src/Day17/Solution.hs:86:5-175                  5426           1    0.0    0.0     0.0    0.0
+        fallXRocks.(...).\                                 Day17.Solution              src/Day17/Solution.hs:86:44-122                 5427        2022    0.0    0.0     0.0    0.0
+         fallXRocks.fallNextRock                           Day17.Solution              src/Day17/Solution.hs:(89,5)-(92,77)            5446        2022    0.0    0.0     0.0    0.0
+          fallXRocks.fallNextRock.(...)                    Day17.Solution              src/Day17/Solution.hs:91:9-78                   5454        2022    0.0    0.0     0.0    0.0
+           makeRockFallUntilRest                           Day17.Solution              src/Day17/Solution.hs:(136,1)-(144,54)          5455        2022    0.0    0.0     0.0    0.0
+            makeRockFallUntilRest.go                       Day17.Solution              src/Day17/Solution.hs:(139,5)-(144,54)          5457       11866    0.0    0.0     0.0    0.0
+             $sel:rockPosition:MkState                     Day17.Solution              src/Day17/Solution.hs:110:5-16                  5459       23732    0.0    0.0     0.0    0.0
+             didMoveDown                                   Day17.Solution              src/Day17/Solution.hs:154:1-49                  5458       11866    0.0    0.0     0.0    0.0
+             makeRockFallUntilRest.go.(...)                Day17.Solution              src/Day17/Solution.hs:143:9-59                  5472       11866    0.0    0.0     0.0    0.0
+              readItem                                     Day17.CyclicList            src/Day17/CyclicList.hs:(10,1)-(11,35)          5473       11867    0.0    0.0     0.0    0.0
+               reset                                       Day17.CyclicList            src/Day17/CyclicList.hs:14:1-99                 5626           1    0.0    0.0     0.0    0.0
+             makeRockFallUntilRest.go.nextMoves            Day17.Solution              src/Day17/Solution.hs:143:9-59                  5550       11866    0.0    0.0     0.0    0.0
+             makeRockFallUntilRest.go.nextState            Day17.Solution              src/Day17/Solution.hs:144:9-54                  5460       11866    0.0    0.0     0.0    0.0
+              makeMove                                     Day17.Solution              src/Day17/Solution.hs:(147,1)-(151,106)         5461       11866    0.0    0.0     0.0    0.0
+               makeMove.\                                  Day17.Solution              src/Day17/Solution.hs:151:17-105                5547       11866    0.0    0.0     0.0    0.0
+                $sel:rockPosition:MkState                  Day17.Solution              src/Day17/Solution.hs:110:5-16                  5549       23732    0.0    0.0     0.0    0.0
+                didMoveDown                                Day17.Solution              src/Day17/Solution.hs:154:1-49                  5548       11866    0.0    0.0     0.0    0.0
+                restRock                                   Day17.Solution              src/Day17/Solution.hs:(157,1)-(177,67)          5558        2022    0.0    0.0     0.0    0.0
+                 $sel:highestPoint:MkState                 Day17.Solution              src/Day17/Solution.hs:108:5-16                  5597        2022    0.0    0.0     0.0    0.0
+                 restRock.(...)                            Day17.Solution              src/Day17/Solution.hs:164:5-151                 5563        2022    0.0    0.0     0.0    0.0
+                  restRock.addBlocked                      Day17.Solution              src/Day17/Solution.hs:(169,5)-(173,21)          5565        8897    0.0    0.0     0.0    0.0
+                   insert                                  Data.HashSet.Internal       Data/HashSet/Internal.hs:358:1-42               5570        8897    0.0    0.0     0.0    0.0
+                    asMap                                  Data.HashSet.Internal       Data/HashSet/Internal.hs:113:7-11               5571        8897    0.0    0.0     0.0    0.0
+                    insert                                 Data.HashMap.Internal       Data/HashMap/Internal.hs:768:1-37               5572        8897    0.0    0.0     0.0    0.0
+                     hash                                  Data.HashMap.Internal       Data/HashMap/Internal.hs:180:1-28               5573        8897    0.0    0.0     0.0    0.0
+                      hash                                 Data.Hashable.Class         src/Data/Hashable/Class.hs:596:5-45             5574        8897    0.0    0.0     0.0    0.0
+                       hashWithSalt                        Data.Hashable.Class         src/Data/Hashable/Class.hs:384:5-26             5579           0    0.0    0.0     0.0    0.0
+                        hashInt                            Data.Hashable.LowLevel      src/Data/Hashable/LowLevel.hs:65:1-41           5580        8897    0.0    0.0     0.0    0.0
+                     insert'                               Data.HashMap.Internal       Data/HashMap/Internal.hs:(772,1)-(803,76)       5581        8897    0.0    0.0     0.0    0.0
+                      insert'.go                           Data.HashMap.Internal       Data/HashMap/Internal.hs:(774,5)-(803,76)       5582       40985    0.0    0.0     0.0    0.0
+                       unMArray                            Data.HashMap.Internal.Array Data/HashMap/Internal/Array.hs:158:7-14         5586       86548    0.0    0.0     0.0    0.0
+                       unArray                             Data.HashMap.Internal.Array Data/HashMap/Internal/Array.hs:126:7-13         5613       34822    0.0    0.0     0.0    0.0
+                       insert'.go.i                        Data.HashMap.Internal       Data/HashMap/Internal.hs:793:13-31              5588       22530    0.0    0.0     0.0    0.0
+                       insert'.go.m                        Data.HashMap.Internal       Data/HashMap/Internal.hs:792:13-24              5587       22530    0.0    0.0     0.0    0.0
+                       insert'.go.st                       Data.HashMap.Internal       Data/HashMap/Internal.hs:787:17-36              5610       17411    0.0    0.0     0.0    0.0
+                        unArray                            Data.HashMap.Internal.Array Data/HashMap/Internal/Array.hs:126:7-13         5611       17411    0.0    0.0     0.0    0.0
+                       insert'.go.st'                      Data.HashMap.Internal       Data/HashMap/Internal.hs:788:17-52              5612       17411    0.0    0.0     0.0    0.0
+                        insert'.go.st'                     Data.HashMap.Internal       Data/HashMap/Internal.hs:796:13-48              5625           0    0.0    0.0     0.0    0.0
+                       clone                               Data.HashMap.Internal       Data/HashMap/Internal.hs:(2370,1)-(2371,34)     5620       14677    0.0    0.0     0.0    0.0
+                        unArray                            Data.HashMap.Internal.Array Data/HashMap/Internal/Array.hs:126:7-13         5624       14677    0.0    0.0     0.0    0.0
+                       insert'.go.i                        Data.HashMap.Internal       Data/HashMap/Internal.hs:800:13-25              5617       14677    0.0    0.0     0.0    0.0
+                       insert'.go.st                       Data.HashMap.Internal       Data/HashMap/Internal.hs:795:13-32              5616       14677    0.0    0.0     0.0    0.0
+                        unArray                            Data.HashMap.Internal.Array Data/HashMap/Internal/Array.hs:126:7-13         5618       14677    0.0    0.0     0.0    0.0
+                       insert'.go.st'                      Data.HashMap.Internal       Data/HashMap/Internal.hs:796:13-48              5619       14677    0.0    0.0     0.0    0.0
+                       insert'.go.ary'                     Data.HashMap.Internal       Data/HashMap/Internal.hs:784:17-56              5589        5119    0.0    0.0     0.0    0.0
+                        copy                               Data.HashMap.Internal.Array Data/HashMap/Internal/Array.hs:(297,1)-(302,30) 5591       10238    0.0    0.0     0.0    0.0
+                         copy.\                            Data.HashMap.Internal.Array Data/HashMap/Internal/Array.hs:(301,9)-(302,30) 5592       10238    0.0    0.0     0.0    0.0
+                          unArray                          Data.HashMap.Internal.Array Data/HashMap/Internal/Array.hs:126:7-13         5594       10238    0.0    0.0     0.0    0.0
+                          unMArray                         Data.HashMap.Internal.Array Data/HashMap/Internal/Array.hs:158:7-14         5593       10238    0.0    0.0     0.0    0.0
+                        unArray                            Data.HashMap.Internal.Array Data/HashMap/Internal/Array.hs:126:7-13         5590        5119    0.0    0.0     0.0    0.0
+                        unMArray                           Data.HashMap.Internal.Array Data/HashMap/Internal/Array.hs:158:7-14         5595        5119    0.0    0.0     0.0    0.0
+                   restRock.addBlocked.(...)               Day17.Solution              src/Day17/Solution.hs:(171,9)-(173,21)          5566        8897    0.0    0.0     0.0    0.0
+                   restRock.addBlocked.blocked             Day17.Solution              src/Day17/Solution.hs:(171,9)-(173,21)          5569        8897    0.0    0.0     0.0    0.0
+                   restRock.addBlocked.recentBlocked       Day17.Solution              src/Day17/Solution.hs:(171,9)-(173,21)          5568        8897    0.0    0.0     0.0    0.0
+                  $sel:blockedTiles:MkState                Day17.Solution              src/Day17/Solution.hs:107:5-16                  5583        2022    0.0    0.0     0.0    0.0
+                  $sel:recentBlockedPos:MkState            Day17.Solution              src/Day17/Solution.hs:111:5-20                  5564        2022    0.0    0.0     0.0    0.0
+                  $sel:maxKeptBlockedPos:MkEnvProps        Day17.Solution              src/Day17/Solution.hs:123:5-21                  5567           1    0.0    0.0     0.0    0.0
+                 restRock.newBlocked                       Day17.Solution              src/Day17/Solution.hs:166:5-79                  5559        2022    0.0    0.0     0.0    0.0
+                  addPos                                   Day17.Solution              src/Day17/Solution.hs:(243,1)-(246,16)          5575        8897    0.0    0.0     0.0    0.0
+                   addPos.x                                Day17.Solution              src/Day17/Solution.hs:245:5-16                  5578        8897    0.0    0.0     0.0    0.0
+                   addPos.y                                Day17.Solution              src/Day17/Solution.hs:246:5-16                  5577        8897    0.0    0.0     0.0    0.0
+                  $sel:rockPosition:MkState                Day17.Solution              src/Day17/Solution.hs:110:5-16                  5576        2022    0.0    0.0     0.0    0.0
+                  $sel:rockType:MkState                    Day17.Solution              src/Day17/Solution.hs:109:5-12                  5561        2022    0.0    0.0     0.0    0.0
+                  rockPositions                            Day17.Solution              src/Day17/Solution.hs:104:1-32                  5560        2022    0.0    0.0     0.0    0.0
+                 restRock.newBlockedSet                    Day17.Solution              src/Day17/Solution.hs:164:5-151                 5562        2022    0.0    0.0     0.0    0.0
+                 restRock.newRecentBlocked                 Day17.Solution              src/Day17/Solution.hs:164:5-151                 5598        2022    0.0    0.0     0.0    0.0
+               makeRockFall                                Day17.Solution              src/Day17/Solution.hs:(180,1)-(185,64)          5514       11866    0.0    0.0     0.0    0.0
+                $sel:rockType:MkState                      Day17.Solution              src/Day17/Solution.hs:109:5-12                  5515       11866    0.0    0.0     0.0    0.0
+                isValidPosition                            Day17.Solution              src/Day17/Solution.hs:(200,1)-(228,36)          5516       11866    0.0    0.0     0.0    0.0
+                 isValidPosition.valid                     Day17.Solution              src/Day17/Solution.hs:(206,5)-(208,45)          5518       49710    0.0    0.0     0.0    0.0
+                  isValidPosition.valid.absPos             Day17.Solution              src/Day17/Solution.hs:208:9-45                  5519       49710    0.0    0.0     0.0    0.0
+                   addPos                                  Day17.Solution              src/Day17/Solution.hs:(243,1)-(246,16)          5520       49710    0.0    0.0     0.0    0.0
+                    addPos.x                               Day17.Solution              src/Day17/Solution.hs:245:5-16                  5530       49710    0.0    0.0     0.0    0.0
+                    addPos.y                               Day17.Solution              src/Day17/Solution.hs:246:5-16                  5529       49710    0.0    0.0     0.0    0.0
+                  isValidPosition.doesntCollideWithBlocked Day17.Solution              src/Day17/Solution.hs:219:5-60                  5537           0    0.0    0.0     0.0    0.0
+                   member                                  Data.HashSet.Internal       Data/HashSet/Internal.hs:(348,1)-(350,30)       5538       49709    0.0    0.0     0.0    0.0
+                    asMap                                  Data.HashSet.Internal       Data/HashSet/Internal.hs:113:7-11               5539       49709    0.0    0.0     0.0    0.0
+                    lookup#                                Data.HashMap.Internal       Data/HashMap/Internal.hs:609:1-82               5540       49709    0.0    0.0     0.0    0.0
+                     unArray                               Data.HashMap.Internal.Array Data/HashMap/Internal/Array.hs:126:7-13         5607      187866    0.0    0.0     0.0    0.0
+                     hash                                  Data.HashMap.Internal       Data/HashMap/Internal.hs:180:1-28               5541       49709    0.0    0.0     0.0    0.0
+                      hash                                 Data.Hashable.Class         src/Data/Hashable/Class.hs:596:5-45             5542       49709    0.0    0.0     0.0    0.0
+                       hashWithSalt                        Data.Hashable.Class         src/Data/Hashable/Class.hs:384:5-26             5543           0    0.0    0.0     0.0    0.0
+                        hashInt                            Data.Hashable.LowLevel      src/Data/Hashable/LowLevel.hs:65:1-41           5544       49709    0.0    0.0     0.0    0.0
+                     lookup#.\                             Data.HashMap.Internal       Data/HashMap/Internal.hs:609:33-45              5546       47688    0.0    0.0     0.0    0.0
+                     lookup#.\                             Data.HashMap.Internal       Data/HashMap/Internal.hs:609:58-66              5608        2021    0.0    0.0     0.0    0.0
+                 rockPositions                             Day17.Solution              src/Day17/Solution.hs:104:1-32                  5517       11866    0.0    0.0     0.0    0.0
+                 isValidPosition.doesntBreakRightWall      Day17.Solution              src/Day17/Solution.hs:222:5-55                  5533       11865    0.0    0.0     0.0    0.0
+                  $sel:roomWidth:MkEnvProps                Day17.Solution              src/Day17/Solution.hs:122:5-13                  5535       11865    0.0    0.0     0.0    0.0
+                 isValidPosition.doesntCollideWithBlocked  Day17.Solution              src/Day17/Solution.hs:219:5-60                  5536       11865    0.0    0.0     0.0    0.0
+                makeRockFall.newRockPos                    Day17.Solution              src/Day17/Solution.hs:185:5-64                  5521       11866    0.0    0.0     0.0    0.0
+                 $sel:rockPosition:MkState                 Day17.Solution              src/Day17/Solution.hs:110:5-16                  5526       11866    0.0    0.0     0.0    0.0
+                 moveDownBy                                Day17.Solution              src/Day17/Solution.hs:237:1-39                  5522       11866    0.0    0.0     0.0    0.0
+                  moveBy                                   Day17.Solution              src/Day17/Solution.hs:240:1-15                  5523           0    0.0    0.0     0.0    0.0
+                   addPos                                  Day17.Solution              src/Day17/Solution.hs:(243,1)-(246,16)          5524       11866    0.0    0.0     0.0    0.0
+                    addPos.x                               Day17.Solution              src/Day17/Solution.hs:245:5-16                  5528       11866    0.0    0.0     0.0    0.0
+                    addPos.y                               Day17.Solution              src/Day17/Solution.hs:246:5-16                  5527       11866    0.0    0.0     0.0    0.0
+                 $sel:fallSize:MkEnvProps                  Day17.Solution              src/Day17/Solution.hs:120:5-12                  5525           1    0.0    0.0     0.0    0.0
+                $sel:blockedTiles:MkState                  Day17.Solution              src/Day17/Solution.hs:107:5-16                  5545       11865    0.0    0.0     0.0    0.0
+               pushWithStream                              Day17.Solution              src/Day17/Solution.hs:(188,1)-(197,67)          5462       11866    0.0    0.0     0.0    0.0
+                $sel:rockType:MkState                      Day17.Solution              src/Day17/Solution.hs:109:5-12                  5463       11866    0.0    0.0     0.0    0.0
+                isValidPosition                            Day17.Solution              src/Day17/Solution.hs:(200,1)-(228,36)          5464       11866    0.0    0.0     0.0    0.0
+                 isValidPosition.valid                     Day17.Solution              src/Day17/Solution.hs:(206,5)-(208,45)          5466       45578    0.0    0.0     0.0    0.0
+                  isValidPosition.valid.absPos             Day17.Solution              src/Day17/Solution.hs:208:9-45                  5467       45578    0.0    0.0     0.0    0.0
+                   addPos                                  Day17.Solution              src/Day17/Solution.hs:(243,1)-(246,16)          5468       45578    0.0    0.0     0.0    0.0
+                    addPos.x                               Day17.Solution              src/Day17/Solution.hs:245:5-16                  5491       45578    0.0    0.0     0.0    0.0
+                    addPos.y                               Day17.Solution              src/Day17/Solution.hs:246:5-16                  5490       45578    0.0    0.0     0.0    0.0
+                  isValidPosition.doesntBreakRightWall     Day17.Solution              src/Day17/Solution.hs:222:5-55                  5499           0    0.0    0.0     0.0    0.0
+                  isValidPosition.doesntCollideWithBlocked Day17.Solution              src/Day17/Solution.hs:219:5-60                  5502           0    0.0    0.0     0.0    0.0
+                   member                                  Data.HashSet.Internal       Data/HashSet/Internal.hs:(348,1)-(350,30)       5503       43831    0.0    0.0     0.0    0.0
+                    asMap                                  Data.HashSet.Internal       Data/HashSet/Internal.hs:113:7-11               5504       43831    0.0    0.0     0.0    0.0
+                    lookup#                                Data.HashMap.Internal       Data/HashMap/Internal.hs:609:1-82               5505       43831    0.0    0.0     0.0    0.0
+                     unArray                               Data.HashMap.Internal.Array Data/HashMap/Internal/Array.hs:126:7-13         5609      162859    0.0    0.0     0.0    0.0
+                     hash                                  Data.HashMap.Internal       Data/HashMap/Internal.hs:180:1-28               5506       43831    0.0    0.0     0.0    0.0
+                      hash                                 Data.Hashable.Class         src/Data/Hashable/Class.hs:596:5-45             5507       43831    0.0    0.0     0.0    0.0
+                       hashWithSalt                        Data.Hashable.Class         src/Data/Hashable/Class.hs:384:5-26             5509           0    0.0    0.0     0.0    0.0
+                        hashInt                            Data.Hashable.LowLevel      src/Data/Hashable/LowLevel.hs:65:1-41           5510       43831    0.0    0.0     0.0    0.0
+                     lookup#.\                             Data.HashMap.Internal       Data/HashMap/Internal.hs:609:33-45              5513       42607    0.0    0.0     0.0    0.0
+                     lookup#.\                             Data.HashMap.Internal       Data/HashMap/Internal.hs:609:58-66              5615        1224    0.0    0.0     0.0    0.0
+                 rockPositions                             Day17.Solution              src/Day17/Solution.hs:104:1-32                  5465       11866    0.0    0.0     0.0    0.0
+                 isValidPosition.doesntBreakRightWall      Day17.Solution              src/Day17/Solution.hs:222:5-55                  5498       11064    0.0    0.0     0.0    0.0
+                  $sel:roomWidth:MkEnvProps                Day17.Solution              src/Day17/Solution.hs:122:5-13                  5500       11064    0.0    0.0     0.0    0.0
+                 isValidPosition.doesntCollideWithBlocked  Day17.Solution              src/Day17/Solution.hs:219:5-60                  5501       10869    0.0    0.0     0.0    0.0
+                pushWithStream.newRockPos                  Day17.Solution              src/Day17/Solution.hs:197:5-67                  5469       11866    0.0    0.0     0.0    0.0
+                 $sel:rockPosition:MkState                 Day17.Solution              src/Day17/Solution.hs:110:5-16                  5487       11866    0.0    0.0     0.0    0.0
+                 pushWithStream.moveFnc                    Day17.Solution              src/Day17/Solution.hs:(193,5)-(195,26)          5470       11866    0.0    0.0     0.0    0.0
+                  moveLeftBy                               Day17.Solution              src/Day17/Solution.hs:234:1-39                  5551        5943    0.0    0.0     0.0    0.0
+                   moveBy                                  Day17.Solution              src/Day17/Solution.hs:240:1-15                  5552           0    0.0    0.0     0.0    0.0
+                    addPos                                 Day17.Solution              src/Day17/Solution.hs:(243,1)-(246,16)          5553        5943    0.0    0.0     0.0    0.0
+                     addPos.x                              Day17.Solution              src/Day17/Solution.hs:245:5-16                  5557        5943    0.0    0.0     0.0    0.0
+                     addPos.y                              Day17.Solution              src/Day17/Solution.hs:246:5-16                  5556        5943    0.0    0.0     0.0    0.0
+                  moveRightBy                              Day17.Solution              src/Day17/Solution.hs:231:1-35                  5474        5923    0.0    0.0     0.0    0.0
+                   moveBy                                  Day17.Solution              src/Day17/Solution.hs:240:1-15                  5476           0    0.0    0.0     0.0    0.0
+                    addPos                                 Day17.Solution              src/Day17/Solution.hs:(243,1)-(246,16)          5477        5923    0.0    0.0     0.0    0.0
+                     addPos.x                              Day17.Solution              src/Day17/Solution.hs:245:5-16                  5489        5923    0.0    0.0     0.0    0.0
+                     addPos.y                              Day17.Solution              src/Day17/Solution.hs:246:5-16                  5488        5923    0.0    0.0     0.0    0.0
+                 $sel:streamPushSize:MkEnvProps            Day17.Solution              src/Day17/Solution.hs:121:5-18                  5478           0    0.0    0.0     0.0    0.0
+                $sel:blockedTiles:MkState                  Day17.Solution              src/Day17/Solution.hs:107:5-16                  5512       10869    0.0    0.0     0.0    0.0
+             makeRockFallUntilRest.go.streamMove           Day17.Solution              src/Day17/Solution.hs:143:9-59                  5471       11866    0.0    0.0     0.0    0.0
+          fallXRocks.fallNextRock.(...)                    Day17.Solution              src/Day17/Solution.hs:92:9-77                   5448        2022    0.0    0.0     0.0    0.0
+           spawnRock                                       Day17.Solution              src/Day17/Solution.hs:(127,1)-(133,51)          5449        2022    0.0    0.0     0.0    0.0
+            spawnRock.(...)                                Day17.Solution              src/Day17/Solution.hs:133:5-51                  5451        2022    0.0    0.0     0.0    0.0
+             readItem                                      Day17.CyclicList            src/Day17/CyclicList.hs:(10,1)-(11,35)          5452        2426    0.0    0.0     0.0    0.0
+              reset                                        Day17.CyclicList            src/Day17/CyclicList.hs:14:1-99                 5614         404    0.0    0.0     0.0    0.0
+            spawnRock.newRock                              Day17.Solution              src/Day17/Solution.hs:133:5-51                  5599        2022    0.0    0.0     0.0    0.0
+            spawnRock.newRocks                             Day17.Solution              src/Day17/Solution.hs:133:5-51                  5450        2022    0.0    0.0     0.0    0.0
+            $sel:highestPoint:MkState                      Day17.Solution              src/Day17/Solution.hs:108:5-16                  5606        2021    0.0    0.0     0.0    0.0
+          fallXRocks.fallNextRock.newState                 Day17.Solution              src/Day17/Solution.hs:92:9-77                   5605        2022    0.0    0.0     0.0    0.0
+          fallXRocks.fallNextRock.stateAfterFall           Day17.Solution              src/Day17/Solution.hs:91:9-78                   5453        2022    0.0    0.0     0.0    0.0
+          fallXRocks.fallNextRock.newMoves                 Day17.Solution              src/Day17/Solution.hs:91:9-78                   5604        2021    0.0    0.0     0.0    0.0
+          fallXRocks.fallNextRock.newRocks                 Day17.Solution              src/Day17/Solution.hs:92:9-77                   5447        2021    0.0    0.0     0.0    0.0
+       fallXRocks.res                                      Day17.Solution              src/Day17/Solution.hs:86:5-175                  5627           1    0.0    0.0     0.0    0.0
+      makeRockFallUntilRest.go                             Day17.Solution              src/Day17/Solution.hs:(139,5)-(144,54)          5481           0    0.0    0.0     0.0    0.0
+       makeRockFallUntilRest.go.nextState                  Day17.Solution              src/Day17/Solution.hs:144:9-54                  5482           0    0.0    0.0     0.0    0.0
+        makeMove                                           Day17.Solution              src/Day17/Solution.hs:(147,1)-(151,106)         5483           0    0.0    0.0     0.0    0.0
+         pushWithStream                                    Day17.Solution              src/Day17/Solution.hs:(188,1)-(197,67)          5484           0    0.0    0.0     0.0    0.0
+          pushWithStream.newRockPos                        Day17.Solution              src/Day17/Solution.hs:197:5-67                  5485           0    0.0    0.0     0.0    0.0
+           $sel:streamPushSize:MkEnvProps                  Day17.Solution              src/Day17/Solution.hs:121:5-18                  5486           1    0.0    0.0     0.0    0.0
+           pushWithStream.moveFnc                          Day17.Solution              src/Day17/Solution.hs:(193,5)-(195,26)          5554           0    0.0    0.0     0.0    0.0
+            moveLeftBy                                     Day17.Solution              src/Day17/Solution.hs:234:1-39                  5555           0    0.0    0.0     0.0    0.0
+     task1.initialRocks                                    Day17.Solution              src/Day17/Solution.hs:62:7-61                   5428           1    0.0    0.0     0.0    0.0
+     task1.initialState                                    Day17.Solution              src/Day17/Solution.hs:62:7-61                   5436           1    0.0    0.0     0.0    0.0
+     loadAndParseFile                                      Utils                       src/Utils.hs:(26,1)-(30,25)                     5139           0    0.0    0.0     0.0    0.0
+      loadFile                                             Utils                       src/Utils.hs:(19,1)-(21,21)                     5140           2    0.0    0.0     0.0    0.0
+      runParser                                            Text.Megaparsec             Text/Megaparsec.hs:234:1-61                     5142           2    0.0    0.0     0.0    0.0
+       initialState                                        Text.Megaparsec             Text/Megaparsec.hs:(297,1)-(310,5)              5189           2    0.0    0.0     0.0    0.0
+       runParser'                                          Text.Megaparsec             Text/Megaparsec.hs:248:1-42                     5143           2    0.0    0.0     0.0    0.0
+        runParserT'                                        Text.Megaparsec             Text/Megaparsec.hs:(278,1)-(292,54)             5144           2    0.0    0.0     0.0    0.0
+         runParsecT                                        Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:(649,1)-(654,54)    5145           2    0.0    0.0     0.0    0.0
+          unParser                                         Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:125:5-12            5146           2    0.0    0.0     0.0    0.0
+          movesParser                                      Day17.Solution              src/Day17/Solution.hs:(281,1)-(285,33)          5276           0    0.0    0.0     0.0    0.0
+           unParser                                        Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:125:5-12            5277        7570    0.0    0.0     0.0    0.0
+           create                                          Day17.CyclicList            src/Day17/CyclicList.hs:(6,1)-(7,43)            5332           1    0.0    0.0     0.0    0.0
+           pure                                            Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:168:3-14            5333           1    0.0    0.0     0.0    0.0
+           runParsecT.cok                                  Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:651:5-50            5334           1    0.0    0.0     0.0    0.0
+           <|>                                             Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:205:3-15            5303           0    0.0    0.0     0.0    0.0
+            mplus                                          Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:295:3-15            5304           0    0.0    0.0     0.0    0.0
+             unParser                                      Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:125:5-12            5305       16398    0.0    0.0     0.0    0.0
+             moveParser                                    Day17.Solution              src/Day17/Solution.hs:(288,1)-(291,3)           5307           0    0.0    0.0     0.0    0.0
+              unParser                                     Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:125:5-12            5308       12614    0.0    0.0     0.0    0.0
+              take1_                                       Text.Megaparsec.Stream      Text/Megaparsec/Stream.hs:(132,3)-(133,32)      5309        3783    0.0    0.0     0.0    0.0
+              >>=                                          Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:210:3-15            5310        2524    0.0    0.0     0.0    0.0
+           moveParser                                      Day17.Solution              src/Day17/Solution.hs:(288,1)-(291,3)           5285           0    0.0    0.0     0.0    0.0
+            unParser                                       Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:125:5-12            5291       34069    0.0    0.0     0.0    0.0
+            take1_                                         Text.Megaparsec.Stream      Text/Megaparsec/Stream.hs:(132,3)-(133,32)      5294       11368    0.0    0.0     0.0    0.0
+            >>=                                            Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:210:3-15            5297        7567    0.0    0.0     0.0    0.0
+            return                                         Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:209:3-15            5327           1    0.0    0.0     0.0    0.0
+             pure                                          Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:168:3-14            5328           1    0.0    0.0     0.0    0.0
+            <|>                                            Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:205:3-15            5286           0    0.0    0.0     0.0    0.0
+             mplus                                         Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:295:3-15            5287           0    0.0    0.0     0.0    0.0
+              unParser                                     Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:125:5-12            5288       15169    0.0    0.0     0.0    0.0
+            empty                                          Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:204:3-15            5321           0    0.0    0.0     0.0    0.0
+             <|>                                           Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:205:3-15            5322           0    0.0    0.0     0.0    0.0
+              mplus                                        Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:295:3-15            5323           0    0.0    0.0     0.0    0.0
+               unParser                                    Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:125:5-12            5324           2    0.0    0.0     0.0    0.0
+               return                                      Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:209:3-15            5329           1    0.0    0.0     0.0    0.0
+                unParser                                   Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:125:5-12            5330           2    0.0    0.0     0.0    0.0
+                pure                                       Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:168:3-14            5331           1    0.0    0.0     0.0    0.0
+          rocksParser                                      Day17.Solution              src/Day17/Solution.hs:(250,1)-(254,33)          5149           0    0.0    0.0     0.0    0.0
+           unParser                                        Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:125:5-12            5150           7    0.0    0.0     0.0    0.0
+           >>=                                             Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:210:3-15            5235           2    0.0    0.0     0.0    0.0
+           create                                          Day17.CyclicList            src/Day17/CyclicList.hs:(6,1)-(7,43)            5268           1    0.0    0.0     0.0    0.0
+           pure                                            Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:168:3-14            5269           1    0.0    0.0     0.0    0.0
+           runParsecT.cok                                  Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:651:5-50            5270           1    0.0    0.0     0.0    0.0
+           take1_                                          Text.Megaparsec.Stream      Text/Megaparsec/Stream.hs:(132,3)-(133,32)      5240           1    0.0    0.0     0.0    0.0
+           <|>                                             Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:205:3-15            5156           0    0.0    0.0     0.0    0.0
+            mplus                                          Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:295:3-15            5157           0    0.0    0.0     0.0    0.0
+             unParser                                      Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:125:5-12            5158         149    0.0    0.0     0.0    0.0
+             take1_                                        Text.Megaparsec.Stream      Text/Megaparsec/Stream.hs:(132,3)-(133,32)      5258           4    0.0    0.0     0.0    0.0
+             rockParser                                    Day17.Solution              src/Day17/Solution.hs:(260,1)-(268,7)           5241           0    0.0    0.0     0.0    0.0
+              unParser                                     Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:125:5-12            5242         102    0.0    0.0     0.0    0.0
+              take1_                                       Text.Megaparsec.Stream      Text/Megaparsec/Stream.hs:(132,3)-(133,32)      5255          12    0.0    0.0     0.0    0.0
+              >>=                                          Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:210:3-15            5254           8    0.0    0.0     0.0    0.0
+              pure                                         Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:168:3-14            5257           4    0.0    0.0     0.0    0.0
+              return                                       Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:209:3-15            5261           1    0.0    0.0     0.0    0.0
+               pure                                        Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:168:3-14            5265           1    0.0    0.0     0.0    0.0
+               rockParser.rockCharParser                   Day17.Solution              src/Day17/Solution.hs:(265,5)-(268,7)           5262           0    0.0    0.0     0.0    0.0
+                unParser                                   Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:125:5-12            5264           2    0.0    0.0     0.0    0.0
+                empty                                      Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:204:3-15            5263           0    0.0    0.0     0.0    0.0
+              rockParser.rockCharParser                    Day17.Solution              src/Day17/Solution.hs:(265,5)-(268,7)           5243           0    0.0    0.0     0.0    0.0
+               unParser                                    Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:125:5-12            5245         102    0.0    0.0     0.0    0.0
+               take1_                                      Text.Megaparsec.Stream      Text/Megaparsec/Stream.hs:(132,3)-(133,32)      5244          76    0.0    0.0     0.0    0.0
+               >>=                                         Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:210:3-15            5246          26    0.0    0.0     0.0    0.0
+               return                                      Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:209:3-15            5249           8    0.0    0.0     0.0    0.0
+                pure                                       Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:168:3-14            5250           8    0.0    0.0     0.0    0.0
+               empty                                       Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:204:3-15            5247           0    0.0    0.0     0.0    0.0
+                unParser                                   Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:125:5-12            5248          28    0.0    0.0     0.0    0.0
+                return                                     Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:209:3-15            5251          16    0.0    0.0     0.0    0.0
+                 unParser                                  Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:125:5-12            5252          70    0.0    0.0     0.0    0.0
+                 >>=                                       Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:210:3-15            5256          23    0.0    0.0     0.0    0.0
+                 pure                                      Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:168:3-14            5253          16    0.0    0.0     0.0    0.0
+                 createRock                                Day17.Solution              src/Day17/Solution.hs:(271,1)-(278,134)         5600           4    0.0    0.0     0.0    0.0
+                  createRock.go                            Day17.Solution              src/Day17/Solution.hs:(274,5)-(275,105)         5601          16    0.0    0.0     0.0    0.0
+                   createRock.lineToPositions              Day17.Solution              src/Day17/Solution.hs:278:5-134                 5602          12    0.0    0.0     0.0    0.0
+                    createRock.lineToPositions.\           Day17.Solution              src/Day17/Solution.hs:278:63-116                5603          26    0.0    0.0     0.0    0.0
+           rockParser                                      Day17.Solution              src/Day17/Solution.hs:(260,1)-(268,7)           5163           0    0.0    0.0     0.0    0.0
+            unParser                                       Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:125:5-12            5164          10    0.0    0.0     0.0    0.0
+            >>=                                            Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:210:3-15            5221           2    0.0    0.0     0.0    0.0
+            pure                                           Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:168:3-14            5234           1    0.0    0.0     0.0    0.0
+            return                                         Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:209:3-15            5231           1    0.0    0.0     0.0    0.0
+             pure                                          Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:168:3-14            5232           1    0.0    0.0     0.0    0.0
+            take1_                                         Text.Megaparsec.Stream      Text/Megaparsec/Stream.hs:(132,3)-(133,32)      5227           1    0.0    0.0     0.0    0.0
+            <|>                                            Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:205:3-15            5170           0    0.0    0.0     0.0    0.0
+             mplus                                         Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:295:3-15            5171           0    0.0    0.0     0.0    0.0
+              unParser                                     Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:125:5-12            5172          16    0.0    0.0     0.0    0.0
+              rockParser.rockCharParser                    Day17.Solution              src/Day17/Solution.hs:(265,5)-(268,7)           5203           0    0.0    0.0     0.0    0.0
+            rockParser.rockCharParser                      Day17.Solution              src/Day17/Solution.hs:(265,5)-(268,7)           5182           0    0.0    0.0     0.0    0.0
+             take1_                                        Text.Megaparsec.Stream      Text/Megaparsec/Stream.hs:(132,3)-(133,32)      5190          12    0.0    0.0     0.0    0.0
+             unParser                                      Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:125:5-12            5195           4    0.0    0.0     0.0    0.0
+             >>=                                           Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:210:3-15            5196           2    0.0    0.0     0.0    0.0
+             <|>                                           Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:205:3-15            5183           0    0.0    0.0     0.0    0.0
+              mplus                                        Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:295:3-15            5184           0    0.0    0.0     0.0    0.0
+               unParser                                    Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:125:5-12            5185          22    0.0    0.0     0.0    0.0
+               >>=                                         Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:210:3-15            5204           2    0.0    0.0     0.0    0.0
+               return                                      Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:209:3-15            5216           1    0.0    0.0     0.0    0.0
+                unParser                                   Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:125:5-12            5233           2    0.0    0.0     0.0    0.0
+                createRock                                 Day17.Solution              src/Day17/Solution.hs:(271,1)-(278,134)         5442           1    0.0    0.0     0.0    0.0
+                 createRock.go                             Day17.Solution              src/Day17/Solution.hs:(274,5)-(275,105)         5443           2    0.0    0.0     0.0    0.0
+                  createRock.lineToPositions               Day17.Solution              src/Day17/Solution.hs:278:5-134                 5444           1    0.0    0.0     0.0    0.0
+                   createRock.lineToPositions.\            Day17.Solution              src/Day17/Solution.hs:278:63-116                5445           4    0.0    0.0     0.0    0.0
+                pure                                       Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:168:3-14            5217           1    0.0    0.0     0.0    0.0
+               empty                                       Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:204:3-15            5228           0    0.0    0.0     0.0    0.0
+             empty                                         Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:204:3-15            5210           0    0.0    0.0     0.0    0.0
+              <|>                                          Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:205:3-15            5211           0    0.0    0.0     0.0    0.0
+               mplus                                       Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:295:3-15            5212           0    0.0    0.0     0.0    0.0
+                unParser                                   Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:125:5-12            5213           3    0.0    0.0     0.0    0.0
+                return                                     Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:209:3-15            5218           1    0.0    0.0     0.0    0.0
+                 pure                                      Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:168:3-14            5219           1    0.0    0.0     0.0    0.0
+                 unParser                                  Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:125:5-12            5220           1    0.0    0.0     0.0    0.0
+         stateParseErrors                                  Text.Megaparsec.State       Text/Megaparsec/State.hs:52:5-20                5271           2    0.0    0.0     0.0    0.0
+    task2                                                  Day17.Solution              src/Day17/Solution.hs:(42,1)-(55,7)             5336           0    0.0    0.0   100.0  100.0
+     $sel:highestPoint:MkState                             Day17.Solution              src/Day17/Solution.hs:108:5-16                  5628           1    0.0    0.0     0.0    0.0
+     task2.(...)                                           Day17.Solution              src/Day17/Solution.hs:46:7-61                   5634           1    0.0    0.0     0.0    0.0
+      createInitialState                                   Day17.Solution              src/Day17/Solution.hs:(75,1)-(81,3)             5635           1    0.0    0.0     0.0    0.0
+       spawnRock                                           Day17.Solution              src/Day17/Solution.hs:(127,1)-(133,51)          5636           1    0.0    0.0     0.0    0.0
+        $sel:highestPoint:MkState                          Day17.Solution              src/Day17/Solution.hs:108:5-16                  5656           1    0.0    0.0     0.0    0.0
+        spawnRock.(...)                                    Day17.Solution              src/Day17/Solution.hs:133:5-51                  5638           1    0.0    0.0     0.0    0.0
+         readItem                                          Day17.CyclicList            src/Day17/CyclicList.hs:(10,1)-(11,35)          5639           1    0.0    0.0     0.0    0.0
+        spawnRock.newRock                                  Day17.Solution              src/Day17/Solution.hs:133:5-51                  5641           1    0.0    0.0     0.0    0.0
+        spawnRock.newRocks                                 Day17.Solution              src/Day17/Solution.hs:133:5-51                  5637           1    0.0    0.0     0.0    0.0
+     task2.finalState                                      Day17.Solution              src/Day17/Solution.hs:47:7-79                   5629           1    0.0    0.0   100.0  100.0
+      fallXRocks                                           Day17.Solution              src/Day17/Solution.hs:(84,1)-(92,77)            5630           1    0.0    0.0   100.0  100.0
+       fallXRocks.(...)                                    Day17.Solution              src/Day17/Solution.hs:86:5-175                  5631           1    0.0    0.2   100.0  100.0
+        fallXRocks.(...).\                                 Day17.Solution              src/Day17/Solution.hs:86:44-122                 5632    10000000    0.1    0.0    99.9   99.8
+         fallXRocks.fallNextRock                           Day17.Solution              src/Day17/Solution.hs:(89,5)-(92,77)            5646    10000000    0.4    1.5    99.8   99.8
+          fallXRocks.fallNextRock.(...)                    Day17.Solution              src/Day17/Solution.hs:91:9-78                   5654    10000000    0.1    0.0    98.5   96.6
+           makeRockFallUntilRest                           Day17.Solution              src/Day17/Solution.hs:(136,1)-(144,54)          5655    10000000    0.1    0.2    98.5   96.6
+            makeRockFallUntilRest.go                       Day17.Solution              src/Day17/Solution.hs:(139,5)-(144,54)          5657    57142850    2.9    5.2    98.4   96.4
+             $sel:rockPosition:MkState                     Day17.Solution              src/Day17/Solution.hs:110:5-16                  5659   114285700    0.0    0.0     0.0    0.0
+             didMoveDown                                   Day17.Solution              src/Day17/Solution.hs:154:1-49                  5658    57142850    0.0    0.0     0.0    0.0
+             makeRockFallUntilRest.go.(...)                Day17.Solution              src/Day17/Solution.hs:143:9-59                  5672    57142850    0.8    2.1     1.1    2.8
+              readItem                                     Day17.CyclicList            src/Day17/CyclicList.hs:(10,1)-(11,35)          5673    58571421    0.0    0.0     0.3    0.7
+               reset                                       Day17.CyclicList            src/Day17/CyclicList.hs:14:1-99                 5806     1428571    0.2    0.7     0.2    0.7
+             makeRockFallUntilRest.go.nextMoves            Day17.Solution              src/Day17/Solution.hs:143:9-59                  5743    57142850    0.2    0.0     0.2    0.0
+             makeRockFallUntilRest.go.nextState            Day17.Solution              src/Day17/Solution.hs:144:9-54                  5660    57142850    0.3    0.0    94.0   88.4
+              makeMove                                     Day17.Solution              src/Day17/Solution.hs:(147,1)-(151,106)         5661    57142850    0.3    0.0    93.7   88.4
+               makeMove.\                                  Day17.Solution              src/Day17/Solution.hs:151:17-105                5740    57142850    0.4    0.0    22.6   35.3
+                $sel:rockPosition:MkState                  Day17.Solution              src/Day17/Solution.hs:110:5-16                  5742   114285700    0.0    0.0     0.0    0.0
+                didMoveDown                                Day17.Solution              src/Day17/Solution.hs:154:1-49                  5741    57142850    0.0    0.0     0.0    0.0
+                restRock                                   Day17.Solution              src/Day17/Solution.hs:(157,1)-(177,67)          5751    10000000    0.5    0.2    22.2   35.3
+                 $sel:highestPoint:MkState                 Day17.Solution              src/Day17/Solution.hs:108:5-16                  5787    10000000    0.0    0.0     0.0    0.0
+                 restRock.(...)                            Day17.Solution              src/Day17/Solution.hs:164:5-151                 5756    10000000    0.5    1.5    20.0   31.6
+                  restRock.addBlocked                      Day17.Solution              src/Day17/Solution.hs:(169,5)-(173,21)          5758    44000000    1.1    3.5    19.5   30.1
+                   insert                                  Data.HashSet.Internal       Data/HashSet/Internal.hs:358:1-42               5763    44000000    0.1    0.0     7.6   12.0
+                    asMap                                  Data.HashSet.Internal       Data/HashSet/Internal.hs:113:7-11               5764    44000000    0.0    0.0     0.0    0.0
+                    insert                                 Data.HashMap.Internal       Data/HashMap/Internal.hs:768:1-37               5765    44000000    0.3    0.0     7.5   12.0
+                     hash                                  Data.HashMap.Internal       Data/HashMap/Internal.hs:180:1-28               5766    44000000    0.4    0.0     1.4    0.9
+                      hash                                 Data.Hashable.Class         src/Data/Hashable/Class.hs:596:5-45             5767    44000000    0.7    0.5     1.1    0.9
+                       hashWithSalt                        Data.Hashable.Class         src/Data/Hashable/Class.hs:384:5-26             5772           0    0.1    0.0     0.3    0.4
+                        hashInt                            Data.Hashable.LowLevel      src/Data/Hashable/LowLevel.hs:65:1-41           5773    44000000    0.2    0.4     0.2    0.4
+                     insert'                               Data.HashMap.Internal       Data/HashMap/Internal.hs:(772,1)-(803,76)       5774    44000000    0.0    0.0     5.8   11.1
+                      insert'.go                           Data.HashMap.Internal       Data/HashMap/Internal.hs:(774,5)-(803,76)       5775    87504437    3.5    3.9     5.8   11.1
+                       unMArray                            Data.HashMap.Internal.Array Data/HashMap/Internal/Array.hs:158:7-14         5777    97212037    0.0    0.0     0.0    0.0
+                       insert'.go.i                        Data.HashMap.Internal       Data/HashMap/Internal.hs:793:13-31              5779    56089318    0.0    0.0     0.0    0.0
+                       insert'.go.m                        Data.HashMap.Internal       Data/HashMap/Internal.hs:792:13-24              5778    56089318    0.0    0.0     0.0    0.0
+                       insert'.go.ary'                     Data.HashMap.Internal       Data/HashMap/Internal.hs:784:17-56              5780    38906230    1.2    2.0     1.5    2.0
+                        copy                               Data.HashMap.Internal.Array Data/HashMap/Internal/Array.hs:(297,1)-(302,30) 5782    77812460    0.1    0.0     0.4    0.0
+                         copy.\                            Data.HashMap.Internal.Array Data/HashMap/Internal/Array.hs:(301,9)-(302,30) 5783    77812460    0.2    0.0     0.2    0.0
+                          unArray                          Data.HashMap.Internal.Array Data/HashMap/Internal/Array.hs:126:7-13         5785    77812460    0.0    0.0     0.0    0.0
+                          unMArray                         Data.HashMap.Internal.Array Data/HashMap/Internal/Array.hs:158:7-14         5784    77812460    0.0    0.0     0.0    0.0
+                        unArray                            Data.HashMap.Internal.Array Data/HashMap/Internal/Array.hs:126:7-13         5781    38906230    0.0    0.0     0.0    0.0
+                        unMArray                           Data.HashMap.Internal.Array Data/HashMap/Internal/Array.hs:158:7-14         5786    38906230    0.0    0.0     0.0    0.0
+                       unArray                             Data.HashMap.Internal.Array Data/HashMap/Internal/Array.hs:126:7-13         5800    34366176    0.0    0.0     0.0    0.0
+                       clone                               Data.HashMap.Internal       Data/HashMap/Internal.hs:(2370,1)-(2371,34)     5842    26321349    0.3    3.7     0.3    3.7
+                        unArray                            Data.HashMap.Internal.Array Data/HashMap/Internal/Array.hs:126:7-13         5843    26321349    0.0    0.0     0.0    0.0
+                       insert'.go.i                        Data.HashMap.Internal       Data/HashMap/Internal.hs:800:13-25              5839    26321349    0.0    0.0     0.0    0.0
+                       insert'.go.st                       Data.HashMap.Internal       Data/HashMap/Internal.hs:795:13-32              5838    26321349    0.1    0.0     0.1    0.0
+                        unArray                            Data.HashMap.Internal.Array Data/HashMap/Internal/Array.hs:126:7-13         5840    26321349    0.0    0.0     0.0    0.0
+                       insert'.go.st'                      Data.HashMap.Internal       Data/HashMap/Internal.hs:796:13-48              5841    26321349    0.2    0.9     0.2    0.9
+                       insert'.go.st                       Data.HashMap.Internal       Data/HashMap/Internal.hs:787:17-36              5797    17183088    0.0    0.0     0.0    0.0
+                        unArray                            Data.HashMap.Internal.Array Data/HashMap/Internal/Array.hs:126:7-13         5798    17183088    0.0    0.0     0.0    0.0
+                       insert'.go.st'                      Data.HashMap.Internal       Data/HashMap/Internal.hs:788:17-52              5799    17183088    0.1    0.6     0.1    0.6
+                        insert'.go.st'                     Data.HashMap.Internal       Data/HashMap/Internal.hs:796:13-48              5853           0    0.0    0.0     0.0    0.0
+                   restRock.addBlocked.(...)               Day17.Solution              src/Day17/Solution.hs:(171,9)-(173,21)          5759    44000000    0.1    0.0    10.8   14.6
+                    restRock.removeLast                    Day17.Solution              src/Day17/Solution.hs:(176,5)-(177,67)          5807    43999900    1.4    5.1    10.7   14.6
+                     delete                                Data.HashSet.Internal       Data/HashSet/Internal.hs:368:1-39               5808    43999900    0.1    0.0     9.3    9.5
+                      asMap                                Data.HashSet.Internal       Data/HashSet/Internal.hs:113:7-11               5809    43999900    0.0    0.0     0.0    0.0
+                      delete                               Data.HashMap.Internal       Data/HashMap/Internal.hs:1073:1-33              5810    43999900    0.4    0.0     9.2    9.5
+                       delete'                             Data.HashMap.Internal       Data/HashMap/Internal.hs:(1077,1)-(1125,23)     5815    43999900    0.1    0.0     7.7    8.6
+                        delete'.go                         Data.HashMap.Internal       Data/HashMap/Internal.hs:(1079,5)-(1125,23)     5816   131519791    4.6    6.9     7.6    8.6
+                         unArray                           Data.HashMap.Internal.Array Data/HashMap/Internal/Array.hs:126:7-13         5822   181137978    0.0    0.0     0.0    0.0
+                         unMArray                          Data.HashMap.Internal.Array Data/HashMap/Internal/Array.hs:158:7-14         5832    86993104    0.0    0.0     0.0    0.0
+                         delete'.go.i                      Data.HashMap.Internal       Data/HashMap/Internal.hs:1103:13-31             5818    60609257    0.0    0.0     0.0    0.0
+                         delete'.go.m                      Data.HashMap.Internal       Data/HashMap/Internal.hs:1102:13-24             5817    60609257    0.0    0.0     0.0    0.0
+                         delete'.go.st                     Data.HashMap.Internal       Data/HashMap/Internal.hs:1086:17-35             5819    60609257    0.1    0.0     0.1    0.0
+                          unArray                          Data.HashMap.Internal.Array Data/HashMap/Internal/Array.hs:126:7-13         5820    60609257    0.0    0.0     0.0    0.0
+                         delete'.go.st'                    Data.HashMap.Internal       Data/HashMap/Internal.hs:1087:17-50             5821    60609257    0.7    0.2     0.8    0.2
+                          delete'.go.st'                   Data.HashMap.Internal       Data/HashMap/Internal.hs:1106:13-46             5837           0    0.0    0.0     0.0    0.0
+                         delete'.go.bIndexed               Data.HashMap.Internal       Data/HashMap/Internal.hs:1099:23-84             5823    38324691    0.9    0.3     1.9    1.2
+                          copy                             Data.HashMap.Internal.Array Data/HashMap/Internal/Array.hs:(297,1)-(302,30) 5826    76649382    0.1    0.0     0.4    0.0
+                           copy.\                          Data.HashMap.Internal.Array Data/HashMap/Internal/Array.hs:(301,9)-(302,30) 5827    76649382    0.3    0.0     0.3    0.0
+                            unArray                        Data.HashMap.Internal.Array Data/HashMap/Internal/Array.hs:126:7-13         5829    76649382    0.0    0.0     0.0    0.0
+                            unMArray                       Data.HashMap.Internal.Array Data/HashMap/Internal/Array.hs:158:7-14         5828    76649382    0.0    0.0     0.0    0.0
+                          new_                             Data.HashMap.Internal.Array Data/HashMap/Internal/Array.hs:208:1-28         5825    38324691    0.6    0.8     0.6    0.8
+                          unArray                          Data.HashMap.Internal.Array Data/HashMap/Internal/Array.hs:126:7-13         5824    38324691    0.0    0.0     0.0    0.0
+                          unMArray                         Data.HashMap.Internal.Array Data/HashMap/Internal/Array.hs:158:7-14         5830    38324691    0.0    0.0     0.0    0.0
+                         delete'.go.i                      Data.HashMap.Internal       Data/HashMap/Internal.hs:1115:13-25             5834    26910634    0.0    0.0     0.0    0.0
+                         delete'.go.st                     Data.HashMap.Internal       Data/HashMap/Internal.hs:1105:13-33             5833    26910634    0.0    0.0     0.0    0.0
+                          unArray                          Data.HashMap.Internal.Array Data/HashMap/Internal/Array.hs:126:7-13         5835    26910634    0.0    0.0     0.0    0.0
+                         delete'.go.st'                    Data.HashMap.Internal       Data/HashMap/Internal.hs:1106:13-46             5836    26910634    0.2    0.3     0.2    0.3
+                         isLeafOrCollision                 Data.HashMap.Internal       Data/HashMap/Internal.hs:(556,1)-(558,41)       5831    22341487    0.0    0.0     0.0    0.0
+                         delete'.go.ary'                   Data.HashMap.Internal       Data/HashMap/Internal.hs:1111:21-41             5845      589285    0.0    0.0     0.0    0.1
+                          copy                             Data.HashMap.Internal.Array Data/HashMap/Internal/Array.hs:(297,1)-(302,30) 5848     1178570    0.0    0.0     0.0    0.0
+                           copy.\                          Data.HashMap.Internal.Array Data/HashMap/Internal/Array.hs:(301,9)-(302,30) 5849     1178570    0.0    0.0     0.0    0.0
+                            unArray                        Data.HashMap.Internal.Array Data/HashMap/Internal/Array.hs:126:7-13         5851     1178570    0.0    0.0     0.0    0.0
+                            unMArray                       Data.HashMap.Internal.Array Data/HashMap/Internal/Array.hs:158:7-14         5850     1178570    0.0    0.0     0.0    0.0
+                          new_                             Data.HashMap.Internal.Array Data/HashMap/Internal/Array.hs:208:1-28         5847      589285    0.0    0.1     0.0    0.1
+                          unArray                          Data.HashMap.Internal.Array Data/HashMap/Internal/Array.hs:126:7-13         5846      589285    0.0    0.0     0.0    0.0
+                          unMArray                         Data.HashMap.Internal.Array Data/HashMap/Internal/Array.hs:158:7-14         5852      589285    0.0    0.0     0.0    0.0
+                         delete'.go.bm                     Data.HashMap.Internal       Data/HashMap/Internal.hs:1112:21-75             5844      589285    0.0    0.0     0.0    0.0
+                       hash                                Data.HashMap.Internal       Data/HashMap/Internal.hs:180:1-28               5811    43999900    0.2    0.0     1.2    0.9
+                        hash                               Data.Hashable.Class         src/Data/Hashable/Class.hs:596:5-45             5812    43999900    0.7    0.5     1.0    0.9
+                         hashWithSalt                      Data.Hashable.Class         src/Data/Hashable/Class.hs:384:5-26             5813           0    0.1    0.0     0.3    0.4
+                          hashInt                          Data.Hashable.LowLevel      src/Data/Hashable/LowLevel.hs:65:1-41           5814    43999900    0.2    0.4     0.2    0.4
+                   restRock.addBlocked.blocked             Day17.Solution              src/Day17/Solution.hs:(171,9)-(173,21)          5762    44000000    0.0    0.0     0.0    0.0
+                   restRock.addBlocked.recentBlocked       Day17.Solution              src/Day17/Solution.hs:(171,9)-(173,21)          5761    44000000    0.0    0.0     0.0    0.0
+                  $sel:blockedTiles:MkState                Day17.Solution              src/Day17/Solution.hs:107:5-16                  5776    10000000    0.0    0.0     0.0    0.0
+                  $sel:recentBlockedPos:MkState            Day17.Solution              src/Day17/Solution.hs:111:5-20                  5757    10000000    0.0    0.0     0.0    0.0
+                  $sel:maxKeptBlockedPos:MkEnvProps        Day17.Solution              src/Day17/Solution.hs:123:5-21                  5760           1    0.0    0.0     0.0    0.0
+                 restRock.newBlocked                       Day17.Solution              src/Day17/Solution.hs:166:5-79                  5752    10000000    0.9    2.2     1.8    3.5
+                  addPos                                   Day17.Solution              src/Day17/Solution.hs:(243,1)-(246,16)          5768    44000000    0.9    1.3     0.9    1.3
+                   addPos.x                                Day17.Solution              src/Day17/Solution.hs:245:5-16                  5771    44000000    0.0    0.0     0.0    0.0
+                   addPos.y                                Day17.Solution              src/Day17/Solution.hs:246:5-16                  5770    44000000    0.0    0.0     0.0    0.0
+                  $sel:rockPosition:MkState                Day17.Solution              src/Day17/Solution.hs:110:5-16                  5769    10000000    0.0    0.0     0.0    0.0
+                  $sel:rockType:MkState                    Day17.Solution              src/Day17/Solution.hs:109:5-12                  5754    10000000    0.0    0.0     0.0    0.0
+                  rockPositions                            Day17.Solution              src/Day17/Solution.hs:104:1-32                  5753    10000000    0.0    0.0     0.0    0.0
+                 restRock.newBlockedSet                    Day17.Solution              src/Day17/Solution.hs:164:5-151                 5755    10000000    0.0    0.0     0.0    0.0
+                 restRock.newRecentBlocked                 Day17.Solution              src/Day17/Solution.hs:164:5-151                 5788    10000000    0.0    0.0     0.0    0.0
+               makeRockFall                                Day17.Solution              src/Day17/Solution.hs:(180,1)-(185,64)          5707    57142850    1.3    2.8    36.3   27.3
+                $sel:rockType:MkState                      Day17.Solution              src/Day17/Solution.hs:109:5-12                  5708    57142850    0.0    0.0     0.0    0.0
+                isValidPosition                            Day17.Solution              src/Day17/Solution.hs:(200,1)-(228,36)          5709    57142850    4.3    1.9    32.6   21.2
+                 isValidPosition.valid                     Day17.Solution              src/Day17/Solution.hs:(206,5)-(208,45)          5711   239428545    6.4    0.0    26.1   17.7
+                  isValidPosition.valid.absPos             Day17.Solution              src/Day17/Solution.hs:208:9-45                  5712   239428545    0.4    0.0     5.2    6.9
+                   addPos                                  Day17.Solution              src/Day17/Solution.hs:(243,1)-(246,16)          5713   239428545    4.7    6.9     4.8    6.9
+                    addPos.x                               Day17.Solution              src/Day17/Solution.hs:245:5-16                  5723   239428545    0.0    0.0     0.0    0.0
+                    addPos.y                               Day17.Solution              src/Day17/Solution.hs:246:5-16                  5722   239428545    0.0    0.0     0.0    0.0
+                  isValidPosition.doesntBreakRightWall     Day17.Solution              src/Day17/Solution.hs:222:5-55                  5727           0    0.9    0.0     0.9    0.0
+                  isValidPosition.doesntCollideWithBlocked Day17.Solution              src/Day17/Solution.hs:219:5-60                  5730           0    0.4    0.0    13.6   10.8
+                   member                                  Data.HashSet.Internal       Data/HashSet/Internal.hs:(348,1)-(350,30)       5731   239428544    0.8    0.0    13.2   10.8
+                    asMap                                  Data.HashSet.Internal       Data/HashSet/Internal.hs:113:7-11               5732   239428544    0.0    0.0     0.0    0.0
+                    lookup#                                Data.HashMap.Internal       Data/HashMap/Internal.hs:609:1-82               5733   239428544    4.5    2.9    12.3   10.8
+                     unArray                               Data.HashMap.Internal.Array Data/HashMap/Internal/Array.hs:126:7-13         5793   248507652    0.0    0.0     0.0    0.0
+                     hash                                  Data.HashMap.Internal       Data/HashMap/Internal.hs:180:1-28               5734   239428544    2.2    3.0     7.9    7.9
+                      hash                                 Data.Hashable.Class         src/Data/Hashable/Class.hs:596:5-45             5735   239428544    3.9    3.0     5.6    4.9
+                       hashWithSalt                        Data.Hashable.Class         src/Data/Hashable/Class.hs:384:5-26             5736           0    0.6    0.0     1.7    2.0
+                        hashInt                            Data.Hashable.LowLevel      src/Data/Hashable/LowLevel.hs:65:1-41           5737   239428544    1.1    2.0     1.1    2.0
+                     lookup#.\                             Data.HashMap.Internal       Data/HashMap/Internal.hs:609:33-45              5739   229428545    0.0    0.0     0.0    0.0
+                     lookup#.\                             Data.HashMap.Internal       Data/HashMap/Internal.hs:609:58-66              5794     9999999    0.0    0.0     0.0    0.0
+                 rockPositions                             Day17.Solution              src/Day17/Solution.hs:104:1-32                  5710    57142850    0.0    0.0     0.0    0.0
+                 isValidPosition.doesntBreakRightWall      Day17.Solution              src/Day17/Solution.hs:222:5-55                  5726    57142849    0.8    1.2     1.4    1.6
+                  $sel:roomWidth:MkEnvProps                Day17.Solution              src/Day17/Solution.hs:122:5-13                  5728    57142849    0.5    0.5     0.5    0.5
+                 isValidPosition.doesntCollideWithBlocked  Day17.Solution              src/Day17/Solution.hs:219:5-60                  5729    57142849    0.0    0.0     0.0    0.0
+                 isValidPosition.doesntBreakBottom         Day17.Solution              src/Day17/Solution.hs:228:5-36                  5724           0    0.4    0.0     0.4    0.0
+                 isValidPosition.doesntBreakLeftWall       Day17.Solution              src/Day17/Solution.hs:225:5-38                  5725           0    0.4    0.0     0.4    0.0
+                makeRockFall.newRockPos                    Day17.Solution              src/Day17/Solution.hs:185:5-64                  5714    57142850    0.6    0.7     2.4    3.3
+                 $sel:rockPosition:MkState                 Day17.Solution              src/Day17/Solution.hs:110:5-16                  5719    57142850    0.0    0.0     0.0    0.0
+                 moveDownBy                                Day17.Solution              src/Day17/Solution.hs:237:1-39                  5715    57142850    0.1    0.9     1.8    2.6
+                  moveBy                                   Day17.Solution              src/Day17/Solution.hs:240:1-15                  5716           0    0.3    0.0     1.6    1.7
+                   addPos                                  Day17.Solution              src/Day17/Solution.hs:(243,1)-(246,16)          5717    57142850    1.3    1.6     1.3    1.6
+                    addPos.x                               Day17.Solution              src/Day17/Solution.hs:245:5-16                  5721    57142850    0.0    0.0     0.0    0.0
+                    addPos.y                               Day17.Solution              src/Day17/Solution.hs:246:5-16                  5720    57142850    0.0    0.0     0.0    0.0
+                 $sel:fallSize:MkEnvProps                  Day17.Solution              src/Day17/Solution.hs:120:5-12                  5718           1    0.0    0.0     0.0    0.0
+                $sel:blockedTiles:MkState                  Day17.Solution              src/Day17/Solution.hs:107:5-16                  5738    57142849    0.0    0.0     0.0    0.0
+               pushWithStream                              Day17.Solution              src/Day17/Solution.hs:(188,1)-(197,67)          5662    57142850    1.5    3.3    34.5   25.7
+                $sel:rockType:MkState                      Day17.Solution              src/Day17/Solution.hs:109:5-12                  5663    57142850    0.0    0.0     0.0    0.0
+                isValidPosition                            Day17.Solution              src/Day17/Solution.hs:(200,1)-(228,36)          5664    57142850    4.0    1.9    30.8   20.1
+                 isValidPosition.valid                     Day17.Solution              src/Day17/Solution.hs:(206,5)-(208,45)          5666   230285692    6.1    0.0    24.8   16.7
+                  isValidPosition.valid.absPos             Day17.Solution              src/Day17/Solution.hs:208:9-45                  5667   230285692    0.4    0.0     5.1    6.6
+                   addPos                                  Day17.Solution              src/Day17/Solution.hs:(243,1)-(246,16)          5668   230285692    4.7    6.6     4.7    6.6
+                    addPos.x                               Day17.Solution              src/Day17/Solution.hs:245:5-16                  5690   230285692    0.0    0.0     0.0    0.0
+                    addPos.y                               Day17.Solution              src/Day17/Solution.hs:246:5-16                  5689   230285692    0.0    0.0     0.0    0.0
+                  isValidPosition.doesntBreakRightWall     Day17.Solution              src/Day17/Solution.hs:222:5-55                  5694           0    0.9    0.0     0.9    0.0
+                  isValidPosition.doesntCollideWithBlocked Day17.Solution              src/Day17/Solution.hs:219:5-60                  5697           0    0.4    0.0    12.6   10.1
+                   member                                  Data.HashSet.Internal       Data/HashSet/Internal.hs:(348,1)-(350,30)       5698   223714263    0.8    0.0    12.2   10.1
+                    asMap                                  Data.HashSet.Internal       Data/HashSet/Internal.hs:113:7-11               5699   223714263    0.0    0.0     0.0    0.0
+                    lookup#                                Data.HashMap.Internal       Data/HashMap/Internal.hs:609:1-82               5700   223714263    4.1    2.7    11.4   10.1
+                     unArray                               Data.HashMap.Internal.Array Data/HashMap/Internal/Array.hs:126:7-13         5795   226861458    0.0    0.0     0.0    0.0
+                     hash                                  Data.HashMap.Internal       Data/HashMap/Internal.hs:180:1-28               5701   223714263    2.0    2.8     7.3    7.4
+                      hash                                 Data.Hashable.Class         src/Data/Hashable/Class.hs:596:5-45             5702   223714263    3.7    2.8     5.3    4.6
+                       hashWithSalt                        Data.Hashable.Class         src/Data/Hashable/Class.hs:384:5-26             5703           0    0.5    0.0     1.6    1.8
+                        hashInt                            Data.Hashable.LowLevel      src/Data/Hashable/LowLevel.hs:65:1-41           5704   223714263    1.1    1.8     1.1    1.8
+                     lookup#.\                             Data.HashMap.Internal       Data/HashMap/Internal.hs:609:33-45              5706   219714264    0.0    0.0     0.0    0.0
+                     lookup#.\                             Data.HashMap.Internal       Data/HashMap/Internal.hs:609:58-66              5796     3999999    0.0    0.0     0.0    0.0
+                 rockPositions                             Day17.Solution              src/Day17/Solution.hs:104:1-32                  5665    57142850    0.0    0.0     0.0    0.0
+                 isValidPosition.doesntBreakRightWall      Day17.Solution              src/Day17/Solution.hs:222:5-55                  5693    54285707    0.8    1.1     1.3    1.6
+                  $sel:roomWidth:MkEnvProps                Day17.Solution              src/Day17/Solution.hs:122:5-13                  5695    54285707    0.5    0.4     0.5    0.4
+                 isValidPosition.doesntCollideWithBlocked  Day17.Solution              src/Day17/Solution.hs:219:5-60                  5696    54285707    0.0    0.0     0.0    0.0
+                 isValidPosition.doesntBreakBottom         Day17.Solution              src/Day17/Solution.hs:228:5-36                  5691           0    0.3    0.0     0.3    0.0
+                 isValidPosition.doesntBreakLeftWall       Day17.Solution              src/Day17/Solution.hs:225:5-38                  5692           0    0.4    0.0     0.4    0.0
+                pushWithStream.newRockPos                  Day17.Solution              src/Day17/Solution.hs:197:5-67                  5669    57142850    0.4    0.7     2.1    2.3
+                 $sel:rockPosition:MkState                 Day17.Solution              src/Day17/Solution.hs:110:5-16                  5686    57142850    0.0    0.0     0.0    0.0
+                 pushWithStream.moveFnc                    Day17.Solution              src/Day17/Solution.hs:(193,5)-(195,26)          5670    57142850    0.1    0.0     1.6    1.6
+                  moveRightBy                              Day17.Solution              src/Day17/Solution.hs:231:1-35                  5674    29999997    0.1    0.0     0.8    0.9
+                   moveBy                                  Day17.Solution              src/Day17/Solution.hs:240:1-15                  5675           0    0.1    0.0     0.7    0.9
+                    addPos                                 Day17.Solution              src/Day17/Solution.hs:(243,1)-(246,16)          5676    29999997    0.6    0.9     0.6    0.9
+                     addPos.x                              Day17.Solution              src/Day17/Solution.hs:245:5-16                  5688    29999997    0.0    0.0     0.0    0.0
+                     addPos.y                              Day17.Solution              src/Day17/Solution.hs:246:5-16                  5687    29999997    0.0    0.0     0.0    0.0
+                  moveLeftBy                               Day17.Solution              src/Day17/Solution.hs:234:1-39                  5744    27142853    0.1    0.0     0.7    0.8
+                   moveBy                                  Day17.Solution              src/Day17/Solution.hs:240:1-15                  5745           0    0.1    0.0     0.6    0.8
+                    addPos                                 Day17.Solution              src/Day17/Solution.hs:(243,1)-(246,16)          5746    27142853    0.5    0.8     0.5    0.8
+                     addPos.x                              Day17.Solution              src/Day17/Solution.hs:245:5-16                  5750    27142853    0.0    0.0     0.0    0.0
+                     addPos.y                              Day17.Solution              src/Day17/Solution.hs:246:5-16                  5749    27142853    0.0    0.0     0.0    0.0
+                 $sel:streamPushSize:MkEnvProps            Day17.Solution              src/Day17/Solution.hs:121:5-18                  5677           0    0.0    0.0     0.0    0.0
+                $sel:blockedTiles:MkState                  Day17.Solution              src/Day17/Solution.hs:107:5-16                  5705    54285707    0.0    0.0     0.0    0.0
+             makeRockFallUntilRest.go.streamMove           Day17.Solution              src/Day17/Solution.hs:143:9-59                  5671    57142850    0.2    0.0     0.2    0.0
+          fallXRocks.fallNextRock.(...)                    Day17.Solution              src/Day17/Solution.hs:92:9-77                   5648    10000000    0.0    0.0     0.7    1.7
+           spawnRock                                       Day17.Solution              src/Day17/Solution.hs:(127,1)-(133,51)          5649    10000000    0.4    1.2     0.7    1.7
+            spawnRock.(...)                                Day17.Solution              src/Day17/Solution.hs:133:5-51                  5651    10000000    0.2    0.3     0.2    0.5
+             readItem                                      Day17.CyclicList            src/Day17/CyclicList.hs:(10,1)-(11,35)          5652    12000000    0.0    0.0     0.0    0.2
+              reset                                        Day17.CyclicList            src/Day17/CyclicList.hs:14:1-99                 5805     2000000    0.0    0.1     0.0    0.1
+            spawnRock.newRock                              Day17.Solution              src/Day17/Solution.hs:133:5-51                  5789    10000000    0.0    0.0     0.0    0.0
+            spawnRock.newRocks                             Day17.Solution              src/Day17/Solution.hs:133:5-51                  5650    10000000    0.0    0.0     0.0    0.0
+            $sel:highestPoint:MkState                      Day17.Solution              src/Day17/Solution.hs:108:5-16                  5792     9999999    0.0    0.0     0.0    0.0
+          fallXRocks.fallNextRock.newState                 Day17.Solution              src/Day17/Solution.hs:92:9-77                   5791    10000000    0.0    0.0     0.0    0.0
+          fallXRocks.fallNextRock.stateAfterFall           Day17.Solution              src/Day17/Solution.hs:91:9-78                   5653    10000000    0.0    0.0     0.0    0.0
+          fallXRocks.fallNextRock.newMoves                 Day17.Solution              src/Day17/Solution.hs:91:9-78                   5790     9999999    0.1    0.0     0.1    0.0
+          fallXRocks.fallNextRock.newRocks                 Day17.Solution              src/Day17/Solution.hs:92:9-77                   5647     9999999    0.1    0.0     0.1    0.0
+       fallXRocks.res                                      Day17.Solution              src/Day17/Solution.hs:86:5-175                  5854           1    0.0    0.0     0.0    0.0
+      makeRockFallUntilRest.go                             Day17.Solution              src/Day17/Solution.hs:(139,5)-(144,54)          5680           0    0.0    0.0     0.0    0.0
+       makeRockFallUntilRest.go.nextState                  Day17.Solution              src/Day17/Solution.hs:144:9-54                  5681           0    0.0    0.0     0.0    0.0
+        makeMove                                           Day17.Solution              src/Day17/Solution.hs:(147,1)-(151,106)         5682           0    0.0    0.0     0.0    0.0
+         pushWithStream                                    Day17.Solution              src/Day17/Solution.hs:(188,1)-(197,67)          5683           0    0.0    0.0     0.0    0.0
+          pushWithStream.newRockPos                        Day17.Solution              src/Day17/Solution.hs:197:5-67                  5684           0    0.0    0.0     0.0    0.0
+           $sel:streamPushSize:MkEnvProps                  Day17.Solution              src/Day17/Solution.hs:121:5-18                  5685           1    0.0    0.0     0.0    0.0
+           pushWithStream.moveFnc                          Day17.Solution              src/Day17/Solution.hs:(193,5)-(195,26)          5747           0    0.0    0.0     0.0    0.0
+            moveLeftBy                                     Day17.Solution              src/Day17/Solution.hs:234:1-39                  5748           0    0.0    0.0     0.0    0.0
+     task2.initialRocks                                    Day17.Solution              src/Day17/Solution.hs:46:7-61                   5633           1    0.0    0.0     0.0    0.0
+     task2.initialState                                    Day17.Solution              src/Day17/Solution.hs:46:7-61                   5640           1    0.0    0.0     0.0    0.0
+     loadAndParseFile                                      Utils                       src/Utils.hs:(26,1)-(30,25)                     5339           0    0.0    0.0     0.0    0.0
+      loadFile                                             Utils                       src/Utils.hs:(19,1)-(21,21)                     5340           2    0.0    0.0     0.0    0.0
+      runParser                                            Text.Megaparsec             Text/Megaparsec.hs:234:1-61                     5341           2    0.0    0.0     0.0    0.0
+       initialState                                        Text.Megaparsec             Text/Megaparsec.hs:(297,1)-(310,5)              5360           2    0.0    0.0     0.0    0.0
+       runParser'                                          Text.Megaparsec             Text/Megaparsec.hs:248:1-42                     5342           2    0.0    0.0     0.0    0.0
+        runParserT'                                        Text.Megaparsec             Text/Megaparsec.hs:(278,1)-(292,54)             5343           2    0.0    0.0     0.0    0.0
+         runParsecT                                        Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:(649,1)-(654,54)    5344           2    0.0    0.0     0.0    0.0
+          unParser                                         Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:125:5-12            5345           2    0.0    0.0     0.0    0.0
+          movesParser                                      Day17.Solution              src/Day17/Solution.hs:(281,1)-(285,33)          5401           0    0.0    0.0     0.0    0.0
+           unParser                                        Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:125:5-12            5402          43    0.0    0.0     0.0    0.0
+           create                                          Day17.CyclicList            src/Day17/CyclicList.hs:(6,1)-(7,43)            5420           1    0.0    0.0     0.0    0.0
+           pure                                            Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:168:3-14            5421           1    0.0    0.0     0.0    0.0
+           runParsecT.cok                                  Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:651:5-50            5422           1    0.0    0.0     0.0    0.0
+           <|>                                             Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:205:3-15            5410           0    0.0    0.0     0.0    0.0
+            mplus                                          Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:295:3-15            5411           0    0.0    0.0     0.0    0.0
+             unParser                                      Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:125:5-12            5412          40    0.0    0.0     0.0    0.0
+           moveParser                                      Day17.Solution              src/Day17/Solution.hs:(288,1)-(291,3)           5403           0    0.0    0.0     0.0    0.0
+            unParser                                       Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:125:5-12            5407         181    0.0    0.0     0.0    0.0
+            take1_                                         Text.Megaparsec.Stream      Text/Megaparsec/Stream.hs:(132,3)-(133,32)      5408          61    0.0    0.0     0.0    0.0
+            >>=                                            Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:210:3-15            5409          40    0.0    0.0     0.0    0.0
+            return                                         Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:209:3-15            5415           1    0.0    0.0     0.0    0.0
+             pure                                          Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:168:3-14            5416           1    0.0    0.0     0.0    0.0
+            <|>                                            Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:205:3-15            5404           0    0.0    0.0     0.0    0.0
+             mplus                                         Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:295:3-15            5405           0    0.0    0.0     0.0    0.0
+              unParser                                     Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:125:5-12            5406          84    0.0    0.0     0.0    0.0
+              return                                       Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:209:3-15            5417           1    0.0    0.0     0.0    0.0
+               unParser                                    Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:125:5-12            5418           2    0.0    0.0     0.0    0.0
+               pure                                        Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:168:3-14            5419           1    0.0    0.0     0.0    0.0
+              empty                                        Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:204:3-15            5414           0    0.0    0.0     0.0    0.0
+          rocksParser                                      Day17.Solution              src/Day17/Solution.hs:(250,1)-(254,33)          5346           0    0.0    0.0     0.0    0.0
+           unParser                                        Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:125:5-12            5347          15    0.0    0.0     0.0    0.0
+           take1_                                          Text.Megaparsec.Stream      Text/Megaparsec/Stream.hs:(132,3)-(133,32)      5379           5    0.0    0.0     0.0    0.0
+           >>=                                             Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:210:3-15            5378           2    0.0    0.0     0.0    0.0
+           create                                          Day17.CyclicList            src/Day17/CyclicList.hs:(6,1)-(7,43)            5395           1    0.0    0.0     0.0    0.0
+           pure                                            Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:168:3-14            5396           1    0.0    0.0     0.0    0.0
+           runParsecT.cok                                  Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:651:5-50            5397           1    0.0    0.0     0.0    0.0
+           <|>                                             Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:205:3-15            5348           0    0.0    0.0     0.0    0.0
+            mplus                                          Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:295:3-15            5349           0    0.0    0.0     0.0    0.0
+             unParser                                      Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:125:5-12            5350          11    0.0    0.0     0.0    0.0
+             return                                        Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:209:3-15            5390           0    0.0    0.0     0.0    0.0
+              unParser                                     Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:125:5-12            5391           2    0.0    0.0     0.0    0.0
+              rockParser                                   Day17.Solution              src/Day17/Solution.hs:(260,1)-(268,7)           5392           0    0.0    0.0     0.0    0.0
+               rockParser.rockCharParser                   Day17.Solution              src/Day17/Solution.hs:(265,5)-(268,7)           5393           0    0.0    0.0     0.0    0.0
+                empty                                      Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:204:3-15            5394           0    0.0    0.0     0.0    0.0
+             rockParser                                    Day17.Solution              src/Day17/Solution.hs:(260,1)-(268,7)           5387           0    0.0    0.0     0.0    0.0
+              rockParser.rockCharParser                    Day17.Solution              src/Day17/Solution.hs:(265,5)-(268,7)           5388           0    0.0    0.0     0.0    0.0
+               empty                                       Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:204:3-15            5389           0    0.0    0.0     0.0    0.0
+           rockParser                                      Day17.Solution              src/Day17/Solution.hs:(260,1)-(268,7)           5351           0    0.0    0.0     0.0    0.0
+            unParser                                       Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:125:5-12            5352         117    0.0    0.0     0.0    0.0
+            take1_                                         Text.Megaparsec.Stream      Text/Megaparsec/Stream.hs:(132,3)-(133,32)      5374          13    0.0    0.0     0.0    0.0
+            >>=                                            Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:210:3-15            5373          10    0.0    0.0     0.0    0.0
+            return                                         Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:209:3-15            5375           6    0.0    0.0     0.0    0.0
+             pure                                          Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:168:3-14            5376           6    0.0    0.0     0.0    0.0
+             rockParser.rockCharParser                     Day17.Solution              src/Day17/Solution.hs:(265,5)-(268,7)           5381           0    0.0    0.0     0.0    0.0
+              unParser                                     Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:125:5-12            5385          17    0.0    0.0     0.0    0.0
+              >>=                                          Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:210:3-15            5386           6    0.0    0.0     0.0    0.0
+              empty                                        Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:204:3-15            5382           0    0.0    0.0     0.0    0.0
+               <|>                                         Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:205:3-15            5383           0    0.0    0.0     0.0    0.0
+                mplus                                      Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:295:3-15            5384           0    0.0    0.0     0.0    0.0
+            pure                                           Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:168:3-14            5377           5    0.0    0.0     0.0    0.0
+            <|>                                            Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:205:3-15            5353           0    0.0    0.0     0.0    0.0
+             mplus                                         Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:295:3-15            5354           0    0.0    0.0     0.0    0.0
+              unParser                                     Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:125:5-12            5355          61    0.0    0.0     0.0    0.0
+            rockParser.rockCharParser                      Day17.Solution              src/Day17/Solution.hs:(265,5)-(268,7)           5356           0    0.0    0.0     0.0    0.0
+             take1_                                        Text.Megaparsec.Stream      Text/Megaparsec/Stream.hs:(132,3)-(133,32)      5361          88    0.0    0.0     0.0    0.0
+             unParser                                      Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:125:5-12            5362          62    0.0    0.0     0.0    0.0
+             >>=                                           Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:210:3-15            5363          30    0.0    0.0     0.0    0.0
+             return                                        Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:209:3-15            5368           9    0.0    0.0     0.0    0.0
+              pure                                         Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:168:3-14            5369           9    0.0    0.0     0.0    0.0
+             createRock                                    Day17.Solution              src/Day17/Solution.hs:(271,1)-(278,134)         5801           1    0.0    0.0     0.0    0.0
+              createRock.go                                Day17.Solution              src/Day17/Solution.hs:(274,5)-(275,105)         5802           5    0.0    0.0     0.0    0.0
+               createRock.lineToPositions                  Day17.Solution              src/Day17/Solution.hs:278:5-134                 5803           4    0.0    0.0     0.0    0.0
+                createRock.lineToPositions.\               Day17.Solution              src/Day17/Solution.hs:278:63-116                5804           4    0.0    0.0     0.0    0.0
+             <|>                                           Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:205:3-15            5357           0    0.0    0.0     0.0    0.0
+              mplus                                        Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:295:3-15            5358           0    0.0    0.0     0.0    0.0
+               unParser                                    Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:125:5-12            5359         146    0.0    0.0     0.0    0.0
+             empty                                         Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:204:3-15            5364           0    0.0    0.0     0.0    0.0
+              <|>                                          Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:205:3-15            5365           0    0.0    0.0     0.0    0.0
+               mplus                                       Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:295:3-15            5366           0    0.0    0.0     0.0    0.0
+                unParser                                   Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:125:5-12            5367          32    0.0    0.0     0.0    0.0
+                return                                     Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:209:3-15            5370          13    0.0    0.0     0.0    0.0
+                 unParser                                  Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:125:5-12            5371          55    0.0    0.0     0.0    0.0
+                 >>=                                       Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:210:3-15            5380          17    0.0    0.0     0.0    0.0
+                 pure                                      Text.Megaparsec.Internal    Text/Megaparsec/Internal.hs:168:3-14            5372          13    0.0    0.0     0.0    0.0
+                 createRock                                Day17.Solution              src/Day17/Solution.hs:(271,1)-(278,134)         5642           4    0.0    0.0     0.0    0.0
+                  createRock.go                            Day17.Solution              src/Day17/Solution.hs:(274,5)-(275,105)         5643          13    0.0    0.0     0.0    0.0
+                   createRock.lineToPositions              Day17.Solution              src/Day17/Solution.hs:278:5-134                 5644           9    0.0    0.0     0.0    0.0
+                    createRock.lineToPositions.\           Day17.Solution              src/Day17/Solution.hs:278:63-116                5645          26    0.0    0.0     0.0    0.0
+         stateParseErrors                                  Text.Megaparsec.State       Text/Megaparsec/State.hs:52:5-20                5398           2    0.0    0.0     0.0    0.0

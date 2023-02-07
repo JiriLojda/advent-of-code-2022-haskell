@@ -38,6 +38,8 @@ library
       Day14.Solution
       Day15.Solution
       Day16.Solution
+      Day17.CyclicList
+      Day17.Solution
       Day2.Day2
       Day3.Solution
       Day4.Solution
@@ -58,12 +60,14 @@ library
       DuplicateRecordFields
       OverloadedRecordDot
       NamedFieldPuns
-  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -O2
   build-depends:
       base >=4.7 && <5
     , containers
     , megaparsec
     , split
+    , text
+    , unordered-containers
     , vector
   default-language: Haskell2010
 
@@ -79,13 +83,15 @@ executable adventOfCode-exe
       DuplicateRecordFields
       OverloadedRecordDot
       NamedFieldPuns
-  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -O2 -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       adventOfCode
     , base >=4.7 && <5
     , containers
     , megaparsec
     , split
+    , text
+    , unordered-containers
     , vector
   default-language: Haskell2010
 
@@ -102,12 +108,14 @@ test-suite adventOfCode-test
       DuplicateRecordFields
       OverloadedRecordDot
       NamedFieldPuns
-  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -O2 -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       adventOfCode
     , base >=4.7 && <5
     , containers
     , megaparsec
     , split
+    , text
+    , unordered-containers
     , vector
   default-language: Haskell2010
