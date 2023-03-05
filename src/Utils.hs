@@ -1,19 +1,20 @@
-module Utils
-  ( loadFile
-  , splitOn
-  , head
-  , tail
-  , Parser
-  , loadAndParseFile
-  , orElse
-  ) where
+module Utils (
+  loadFile,
+  splitOn,
+  head,
+  tail,
+  Parser,
+  loadAndParseFile,
+  orElse,
+  last,
+) where
 
-import System.IO
-import Prelude hiding (head, tail)
-import qualified Text.Megaparsec as MP
-import qualified Text.Megaparsec.Error as MP.Error
+import Data.Maybe qualified as Maybe
 import Data.Void (Void)
-import qualified Data.Maybe as Maybe
+import System.IO
+import Text.Megaparsec qualified as MP
+import Text.Megaparsec.Error qualified as MP.Error
+import Prelude hiding (head, last, tail)
 
 loadFile :: String -> IO String
 loadFile fileName = do
@@ -35,6 +36,11 @@ splitOn char str = (takeWhile (/= char) str, (drop 1 $ dropWhile (/= char) str))
 head :: [a] -> Maybe a
 head [] = Nothing
 head (x : _) = Just x
+
+last :: [a] -> Maybe a
+last [] = Nothing
+last [x] = Just x
+last (_ : rest) = last rest
 
 tail :: [a] -> Maybe [a]
 tail [] = Nothing

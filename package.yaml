@@ -46,6 +46,7 @@ default-extensions:
 - DuplicateRecordFields
 - OverloadedRecordDot
 - NamedFieldPuns
+- ImportQualifiedPost
 
 library:
   source-dirs: src

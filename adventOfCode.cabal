@@ -60,6 +60,7 @@ library
       DuplicateRecordFields
       OverloadedRecordDot
       NamedFieldPuns
+      ImportQualifiedPost
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -O2
   build-depends:
       base >=4.7 && <5
@@ -83,6 +84,7 @@ executable adventOfCode-exe
       DuplicateRecordFields
       OverloadedRecordDot
       NamedFieldPuns
+      ImportQualifiedPost
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -O2 -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       adventOfCode
@@ -108,6 +110,7 @@ test-suite adventOfCode-test
       DuplicateRecordFields
       OverloadedRecordDot
       NamedFieldPuns
+      ImportQualifiedPost
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -O2 -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       adventOfCode
