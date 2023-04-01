@@ -7,6 +7,7 @@ module Utils (
   loadAndParseFile,
   orElse,
   last,
+  parseString,
 ) where
 
 import Data.Maybe qualified as Maybe
@@ -23,15 +24,19 @@ loadFile fileName = do
 
 type Parser = MP.Parsec Void String
 
-loadAndParseFile :: String -> Parser a -> IO a
-loadAndParseFile fileName parser = do
-  contents <- Utils.loadFile fileName
-  case MP.parse parser "" contents of
+parseString :: Parser a -> String -> IO a
+parseString parser input =
+  case MP.parse parser "" input of
     Left err -> fail $ MP.Error.errorBundlePretty err
     Right res -> pure res
 
+loadAndParseFile :: String -> Parser a -> IO a
+loadAndParseFile fileName parser = do
+  contents <- Utils.loadFile fileName
+  parseString parser contents
+
 splitOn :: Char -> String -> (String, String)
-splitOn char str = (takeWhile (/= char) str, (drop 1 $ dropWhile (/= char) str))
+splitOn char str = (takeWhile (/= char) str, drop 1 $ dropWhile (/= char) str)
 
 head :: [a] -> Maybe a
 head [] = Nothing

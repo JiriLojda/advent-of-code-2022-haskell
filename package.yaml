@@ -38,7 +38,6 @@ ghc-options:
 - -Wmissing-home-modules
 - -Wpartial-fields
 - -Wredundant-constraints
-- -O2
 
 default-extensions:
 - TupleSections
@@ -72,3 +71,5 @@ tests:
     - -with-rtsopts=-N
     dependencies:
     - adventOfCode
+    - hspec
+    - hspec-discover

@@ -40,6 +40,7 @@ library
       Day16.Solution
       Day17.CyclicList
       Day17.Solution
+      Day18.Solution
       Day2.Day2
       Day3.Solution
       Day4.Solution
@@ -61,7 +62,7 @@ library
       OverloadedRecordDot
       NamedFieldPuns
       ImportQualifiedPost
-  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -O2
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints
   build-depends:
       base >=4.7 && <5
     , containers
@@ -85,7 +86,7 @@ executable adventOfCode-exe
       OverloadedRecordDot
       NamedFieldPuns
       ImportQualifiedPost
-  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -O2 -threaded -rtsopts -with-rtsopts=-N
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       adventOfCode
     , base >=4.7 && <5
@@ -101,6 +102,7 @@ test-suite adventOfCode-test
   type: exitcode-stdio-1.0
   main-is: Spec.hs
   other-modules:
+      Day18.SolutionSpec
       Paths_adventOfCode
   hs-source-dirs:
       test
@@ -111,11 +113,13 @@ test-suite adventOfCode-test
       OverloadedRecordDot
       NamedFieldPuns
       ImportQualifiedPost
-  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -O2 -threaded -rtsopts -with-rtsopts=-N
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
   build-depends:
       adventOfCode
     , base >=4.7 && <5
     , containers
+    , hspec
+    , hspec-discover
     , megaparsec
     , split
     , text

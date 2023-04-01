@@ -3,22 +3,23 @@ module Main (main) where
 import System.IO
 
 import Day1
-import qualified Day2.Day2 as Day2
-import qualified Day3.Solution as Day3
-import qualified Day4.Solution as Day4
-import qualified Day5.Solution as Day5
-import qualified Day6.Solution as Day6
-import qualified Day7.Solution as Day7
-import qualified Day8.Solution as Day8
-import qualified Day9.Solution as Day9
-import qualified Day10.Solution as Day10
-import qualified Day11.Solution as Day11
-import qualified Day12.Solution as Day12
-import qualified Day13.Solution as Day13
-import qualified Day14.Solution as Day14
-import qualified Day15.Solution as Day15
-import qualified Day16.Solution as Day16
-import qualified Day17.Solution as Day17
+import Day10.Solution qualified as Day10
+import Day11.Solution qualified as Day11
+import Day12.Solution qualified as Day12
+import Day13.Solution qualified as Day13
+import Day14.Solution qualified as Day14
+import Day15.Solution qualified as Day15
+import Day16.Solution qualified as Day16
+import Day17.Solution qualified as Day17
+import Day18.Solution qualified as Day18
+import Day2.Day2 qualified as Day2
+import Day3.Solution qualified as Day3
+import Day4.Solution qualified as Day4
+import Day5.Solution qualified as Day5
+import Day6.Solution qualified as Day6
+import Day7.Solution qualified as Day7
+import Day8.Solution qualified as Day8
+import Day9.Solution qualified as Day9
 
 main :: IO ()
 main = do
@@ -47,10 +48,11 @@ callDay str = case str of
   "15" -> printDay (fmap show Day15.task1) (fmap show Day15.task2)
   "16" -> printDay (fmap show Day16.task1) (fmap show Day16.task2)
   "17" -> printDay (fmap show Day17.task1) (fmap show Day17.task2)
+  "18" -> printDay (fmap show Day18.task1) (fmap show (Day18.task2 Nothing))
   _ -> pure "Not a valid day"
 
 printDay :: IO String -> IO String -> IO String
 printDay task1 task2 = do
   t1 <- fmap ("task1: " ++) task1
-  t2<- fmap ("task2: " ++) task2
+  t2 <- fmap ("task2: " ++) task2
   pure (t1 ++ "\n" ++ t2)
