@@ -43,6 +43,7 @@ default-extensions:
 - TupleSections
 - BangPatterns
 - DuplicateRecordFields
+- NoFieldSelectors
 - OverloadedRecordDot
 - NamedFieldPuns
 - ImportQualifiedPost
