@@ -44,6 +44,7 @@ library
       Day19.Solution
       Day2.Day2
       Day20.Solution
+      Day21.Solution
       Day3.Solution
       Day4.Solution
       Day5.Solution
@@ -69,6 +70,7 @@ library
   build-depends:
       base >=4.7 && <5
     , containers
+    , hashable
     , megaparsec
     , split
     , text
@@ -95,6 +97,7 @@ executable adventOfCode-exe
       adventOfCode
     , base >=4.7 && <5
     , containers
+    , hashable
     , megaparsec
     , split
     , text
@@ -123,6 +126,7 @@ test-suite adventOfCode-test
       adventOfCode
     , base >=4.7 && <5
     , containers
+    , hashable
     , hspec
     , hspec-discover
     , megaparsec
